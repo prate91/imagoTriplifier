@@ -24,6 +24,7 @@ public class Fuseki {
     public Boolean InsertModelIntoGraph(OntModel model, String graph_name){
         RDFConnection conneg = RDFConnectionFactory.connectPW(this.dataset_url,this.username, this.password);
         String graph_url = this.dataset_url + "/" + graph_name;
+        System.out.print(graph_url);
         conneg.put(graph_url, model);
         return true;
     }

@@ -12,6 +12,8 @@ import cnr.isti.aimh.imago.util.JacksonImport;
 
 public class ImagoTriplifier {
     
+    private static Scanner input;
+
     /**
 	 * Print menu
 	 *
@@ -31,8 +33,7 @@ public class ImagoTriplifier {
     
     public static void main(String[] args) throws IOException {
 
-        // initialize scanner
-		Scanner input = new Scanner(System.in);
+        input = new Scanner(System.in);
 
         // Read file config.properties
         ConfigProperties prop = new ConfigProperties("config.properties");

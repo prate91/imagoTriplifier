@@ -12,7 +12,10 @@ import org.apache.jena.vocabulary.RDF;
 import cnr.isti.aimh.imago.pojo.full.*;
 import cnr.isti.aimh.imago.util.Vocabulary;
 
-
+/**
+ * This is the class to create and populate with individuals the ontology of IMAGO project.
+ * The model is an extension of CIDOC CRM and LRMoo (the reformulation of FRBRoo)
+ */
 public class ModelImago {
     
 
