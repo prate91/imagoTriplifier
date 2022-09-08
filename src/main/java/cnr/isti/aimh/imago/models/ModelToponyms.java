@@ -132,7 +132,7 @@ public class ModelToponyms {
 			resource_Work = model.createResource(e.getWork().getIri());
 			resource_Place = model.createResource(e.getIriWD());
 			resource_Coordinates = model.createResource(baseURI + e.getLatitude() + "," + e.getLongitude());
-			Literal l_coordinates = model.createLiteral("POINT( " + e.getLatitude() + " " + e.getLongitude() +" )");
+			Literal l_coordinates = model.createLiteral("POINT(" + e.getLatitude() + " " + e.getLongitude() +")");
 			resource_Fragment = model.createResource(fragmentURI);
 			literal_Context =  model.createTypedLiteral(e.getContext());
 			literal_TexualPlace = model.createTypedLiteral(e.getPlaceText());
