@@ -68,7 +68,7 @@ public class ModelImago {
 
 			int id = e.getId();                         // get the lemma id
 			Lemma lemma = e.getLemma();                 // get the lemma content
-			String lemmaURI = baseURI + "/lemma/" + id; // Make uri of expression creation
+			String lemmaURI = baseURI + "resources/lemma/" + id; // Make uri of expression creation
 
 			// MAKE RESOURCES
 			//  Make author resource getting the iri from the object author inside the object lemma
@@ -87,7 +87,7 @@ public class ModelImago {
 			// La risorsa autore � di type E39 Actor, quindi gli passo
 			// Come primo argomento la risorsa Autore, come seconto che sto specificando il tipo
 			// e come terzo la risorsa di E39 Actor
-			model.add(r_author, RDF.type, vocabulary.e39_actor);
+			model.add(r_author, RDF.type, vocabulary.author);
 
 			// Faccio la stessa cosa con le altre risorse
 			model.add(r_work, RDF.type, vocabulary.f2_expression);
