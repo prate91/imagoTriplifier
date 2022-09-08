@@ -144,6 +144,7 @@ public class ModelImago {
             }
 
 			// id contatore
+            int count = 0;
             for(Manuscript manuscript : e.getLemma().getManuscripts()) {
 
 				String library = manuscript.getLibrary().getName();
