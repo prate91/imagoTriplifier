@@ -1,0 +1,6 @@
+# exlude config.properties
+config.properties
+
+#exclude json
+*.json
+
