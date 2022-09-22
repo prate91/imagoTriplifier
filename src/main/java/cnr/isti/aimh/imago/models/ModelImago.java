@@ -20,17 +20,21 @@ public class ModelImago {
     
 
 
-	// Impostare una variabile con l'uri del progetto
-	// al momento questo � l'uri temporaneo
-	private static String baseURI = "http://www.imagoarchive.it/ontology/";
+	// Base URI of the IMAGO ontology
+	private static String baseURI = "https://www.imagoarchive.it/ontology/";
 
 
-	// Questa funzione crea e importa l'ontologia OWL
+	/**
+	 * Initialize the model and import the ontology by url
+	 * 
+	 * @param url 	the url with the ontology
+	 * @return 		the ontologic model
+	 */
 	public static OntModel importModel(String url) {
 		OntModel onto = ModelFactory.createOntologyModel(
 		        OntModelSpec.OWL_DL_MEM, null );
-		onto.read(url); // Legge l'ontologia passata tramite l'url
-		return onto; // restituisce l'ontologia letta
+		onto.read(url); // Jena function to read the remote ontology 
+		return onto;
 
 	}
 
@@ -71,50 +75,52 @@ public class ModelImago {
 
 			int id = e.getId();                         // get the lemma id
 			Lemma lemma = e.getLemma();                 // get the lemma content
-			String lemmaURI = baseURI + "resources/lemma/" + id; // Make uri of expression creation
+			String lemmaURI = baseURI + "resources/lemma/" + id; // Make  the IRI of expression creation
 
-			// MAKE RESOURCES
+			////////////////////
+			// MAKE RESOURCES //
+			////////////////////
+			
 			//  Make author resource getting the iri from the object author inside the object lemma
 			// ex. http://www.mirabileweb.it/author/christophorus-bondelmontius-n-1385-ca-m-post-1430-author/22278
 			Resource r_author = model.createResource(e.getLemma().getAuthor().getIri());
 			// Make work resource getting the iri of the work inside the lemma object
+			// ex. http://www.mirabileweb.it/title/descriptio-insulae-cretae-title/4834
 			Resource r_work = model.createResource(e.getLemma().getWork().getIri());
-			// Make Creo la risorsa expression creation opera passandogli l'iri precedentemente creato con l'id del lemma
+			// Make the resource Expression Creation. As IRI we pass the lemma IRI created above
+			// ex. https://https://www.imagoarchive.it/ontology/resources/lemma/0000
 			Resource r_expression_creation = model.createResource(lemmaURI);
+
+
 			Resource blank_node = model.createResource(); // Why? 
 			Literal l_italian_author_name = model.createTypedLiteral(e.getLemma().getAuthor().getAlias().get(0));
 			Literal l_work_title = model.createTypedLiteral(e.getLemma().getWork().getTitle());
 
 
-			// Aggiungo le risorse al modello
-			// La risorsa autore � di type E39 Actor, quindi gli passo
-			// Come primo argomento la risorsa Autore, come seconto che sto specificando il tipo
-			// e come terzo la risorsa di E39 Actor
-			model.add(r_author, RDF.type, vocabulary.author);
+			/////////////////////////////
+			// ADDING TRIPLES TO MODEL //
+			/////////////////////////////
 
-			// Faccio la stessa cosa con le altre risorse
+			model.add(r_author, RDF.type, vocabulary.author);
 			model.add(r_work, RDF.type, vocabulary.f2_expression);
 			model.add(r_expression_creation, RDF.type, vocabulary.f28_expression_creation);
-
-			
-			// Statement s = model.createStatement(s, p, o);
-			// model.add(s); add the statement (triple) to the model
 			model.add(r_expression_creation, vocabulary.p14_carried_out_by, r_author);
 			model.add(r_expression_creation, vocabulary.r17_created, r_work);
 			
 			// !!!!!!!! model.add(resource_Autore, vocabulary.p1_is_identified_by, blankNode);
 			// !!!!!!!! model.add(blankNode, vocabulary.p190_has_symbolic_content, resource_Nome_Autore_Ita);
 			// Forse si può fare più semplicemente
+
 			model.add(r_author, vocabulary.p1_is_identified_by, l_italian_author_name);
 			model.add(r_work, vocabulary.p102_has_title, l_work_title);
 
-			for(Genre genre : e.getLemma().getGenres()) {
-				String genre_iri = genre.getIri();
-				Resource r_genre = model.createResource(genre_iri);
+
+
+			for(Genre genre : e.getLemma().getGenres()) { // for any genre in lemma
+				Resource r_genre = model.createResource(genre.getIri());
+				Literal l_genre = model.createTypedLiteral(genre.getName());
 				model.add(r_genre, RDF.type, vocabulary.genre);
 				model.add(r_work, vocabulary.has_genre, r_genre);
-				String genre_name = genre.getName();
-				Literal l_genre = model.createTypedLiteral(genre_name);
 				model.add(r_genre, vocabulary.has_genre_name, l_genre);
 			}
 
@@ -135,9 +141,9 @@ public class ModelImago {
             	String lat = place.getLat();
             	String lon = place.getLon();
 				// WKT format POINT (30 10)
-            	Literal coordinates = model.createTypedLiteral(toWKT(lat, lon));
+            	Literal l_coordinates = model.createTypedLiteral(toWKT(lat, lon));
             	// model.add(e94_space_primitive, p190_has_symbolic_content, coordinates);
-            	model.add(r_place, vocabulary.p168_place_is_defined_by, coordinates);
+            	model.add(r_place, vocabulary.p168_place_is_defined_by, l_coordinates);
             	model.add(r_work, vocabulary.p106_is_composed_of, r_toponym);
 				// Non usiamo la country per il momento
 
@@ -234,16 +240,16 @@ public class ModelImago {
             	model.add(r_incipit_dedication, vocabulary.is_incipit_dedication_of, r_manuscript);
 
                 //explicit proemio
-				String explicitProemio = manuscript.getExplicitDedication();
-            	String explicitProemio_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca/explicit"; // !METTERE UN IRI UNIVOCO!
-				Resource resource_explicit = model.createResource(explicitProemio_iri);
-            	Literal explicitProemioLiteral = model.createTypedLiteral(explicitProemio);
-				model.add(resource_explicit, RDF.type, e90_symbolic_object);
-            	model.add(resource_explicit, p190_has_symbolic_content, explicitProemioLiteral);
-            	model.add(resource_Manuscript, is_explicit_dedication_of, resource_explicit);
+				String explicit_dedication = manuscript.getExplicitDedication();
+            	String explicit_dedication_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca/explicit"; // !METTERE UN IRI UNIVOCO!
+				Resource r_explicit_dedication = model.createResource(explicit_dedication_iri);
+            	Literal explicitProemioLiteral = model.createTypedLiteral(explicit_dedication);
+				model.add(r_explicit_dedication, RDF.type, vocabulary.e90_symbolic_object);
+            	model.add(r_explicit_dedication, vocabulary.p190_has_symbolic_content, explicitProemioLiteral);
+            	model.add(r_manuscript, vocabulary.is_explicit_dedication_of, r_explicit_dedication);
 
 				//incipit text
-				String incipitTesto = manoscritto.getIncipitTesto();
+				String incipitTesto = manuscript.getIncipitText();
             	String incipitTesto_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca/incipit_text"; // !METTERE UN IRI UNIVOCO!
 				Resource resource_Incipit_text = model.createResource(incipitTesto_iri);
             	Literal incipitTestoLiteral = model.createTypedLiteral(incipitTesto);
