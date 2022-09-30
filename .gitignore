@@ -2,5 +2,5 @@
 config.properties
 
 #exclude json
-*.json
+*no.json
 

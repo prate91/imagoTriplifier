@@ -68,6 +68,7 @@ public class ModelImago {
         * - The Resources have the r_ prefixed in the name of the variable
         * - The literals have the l_ prefixed in the name of the variable
         * - The properties have the p_ prefixed in the name of the variable
+		* - The Blank Nodes have the _b_ prefixed in the name of the variable
         */
 
 		
@@ -92,7 +93,7 @@ public class ModelImago {
 			Resource r_expression_creation = model.createResource(lemmaURI);
 
 
-			Resource blank_node = model.createResource(); // Why? 
+			
 			Literal l_italian_author_name = model.createTypedLiteral(e.getLemma().getAuthor().getAlias().get(0));
 			Literal l_work_title = model.createTypedLiteral(e.getLemma().getWork().getTitle());
 
@@ -106,13 +107,16 @@ public class ModelImago {
 			model.add(r_expression_creation, RDF.type, vocabulary.f28_expression_creation);
 			model.add(r_expression_creation, vocabulary.p14_carried_out_by, r_author);
 			model.add(r_expression_creation, vocabulary.r17_created, r_work);
-			
-			// !!!!!!!! model.add(resource_Autore, vocabulary.p1_is_identified_by, blankNode);
-			// !!!!!!!! model.add(blankNode, vocabulary.p190_has_symbolic_content, resource_Nome_Autore_Ita);
-			// Forse si può fare più semplicemente
 
-			model.add(r_author, vocabulary.p1_is_identified_by, l_italian_author_name);
-			model.add(r_work, vocabulary.p102_has_title, l_work_title);
+			Resource _b_author = model.createResource();			
+			model.add(r_author, vocabulary.p1_is_identified_by, _b_author);
+			model.add(_b_author, vocabulary.p190_has_symbolic_content, l_italian_author_name);
+			// Forse si può fare più semplicemente
+			// model.add(r_author, vocabulary.p1_is_identified_by, l_italian_author_name);
+
+			Resource _b_work = model.createResource();
+			model.add(r_work, vocabulary.p102_has_title, _b_work);
+			model.add(_b_work, vocabulary.p190_has_symbolic_content, l_work_title);
 
 
 
@@ -167,8 +171,8 @@ public class ModelImago {
             	// https://imagoarchive.it/ontology/resources/manuscript/biblioteca/segnatura/fogli
 				// Se fosse questo ci potrebbero essere due manoscritti con lo stesso iri e annotazioni diverse,
 				// a patto che l'annotatore non faccia errori di inserimento
-				// String manuscript_iri = baseURI + "resources/manuscript/" + s_library + "/" + s_signature + "/" + s_folios;
-            	String manuscript_iri = "https://imagoarchive.it/ontology/resources/manuscript"; // !METTERE UN ID!
+				String manuscript_iri = baseURI + "resources/manuscript/" + s_library_place + "/" + s_library + "/" + s_signature + "/" + s_folios;
+            	// String manuscript_iri = "https://imagoarchive.it/ontology/resources/manuscript"; // !METTERE UN ID!
             	String manuscript_url = manuscript.getUrl(); // Questo rappresenta il link alla pagina web in cui il manoscritto e' riprodotto
 
             	Resource r_manuscript = model.createResource(manuscript_iri);
@@ -179,7 +183,8 @@ public class ModelImago {
             	// f3_manifestation, la risorsa non c'e' e va creata
             	// va assegnato un iri alla manifestation come per esempio
             	// https://imagoarchive.it/ontology/resources/manifestation/biblioteca/segnatura/fogli
-            	String manifestation_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca"; // !METTERE UN IRI UNIVOCO!
+            	// String manifestation_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca"; //
+				String manifestation_iri = baseURI + "resources/manifestation/manuscript/" + s_library_place + "/" + s_library + "/" + s_signature + "/" + s_folios; 
             	Resource r_manifestation = model.createResource(manifestation_iri);
             	// model.add(r_manifestation, vocabulary.r4_embodies, r_work);
             	model.add(r_manuscript, vocabulary.r7i_is_materialized_in, r_manifestation);
@@ -187,18 +192,18 @@ public class ModelImago {
 
             	String manuscript_author_name = manuscript.getAuthor();
             	Literal l_manuscript_author = model.createTypedLiteral(manuscript_author_name);
-            	Resource blankNodeAppellationAuthorLat = model.createResource();
-            	// model.add(blankNodeAppellationAuthorLat, vocabulary.p106i_forms_part_of, r_manuscript);
-            	// model.add(blankNodeAppellationAuthorLat, vocabulary.p190_has_symbolic_content, l_manuscript_author);
+            	Resource _b_manuscript_author = model.createResource();
+            	model.add(_b_manuscript_author, vocabulary.p106i_forms_part_of, r_manuscript);
+            	model.add(_b_manuscript_author, vocabulary.p190_has_symbolic_content, l_manuscript_author);
 
-				model.add(r_manuscript, vocabulary.p106i_forms_part_of, l_manuscript_author);
+				// model.add(r_manuscript, vocabulary.p106i_forms_part_of, l_manuscript_author);
 
 				String manuscript_title = manuscript.getTitle();
             	Literal l_manuscript_title = model.createTypedLiteral(manuscript_title);
-            	// Resource blankNodeTitleManuscript = model.createResource();
-            	// model.add(r_manuscript, vocabulary.p102_has_title, blankNodeTitleManuscript);
-            	// model.add(blankNodeTitleManuscript, vocabulary.p190_has_symbolic_content, l_manuscript_title);
-				model.add(r_manuscript, vocabulary.p102_has_title, l_manuscript_title);
+            	Resource _b_manuscript_title = model.createResource();
+            	model.add(r_manuscript, vocabulary.p102_has_title, _b_manuscript_title);
+            	model.add(_b_manuscript_title, vocabulary.p190_has_symbolic_content, l_manuscript_title);
+				// model.add(r_manuscript, vocabulary.p102_has_title, l_manuscript_title);
 
             	Resource r_library = model.createResource(manuscript.getLibrary().getIri()); // !METTERE UN IRI UNIVOCO!
 				model.add(r_library, RDF.type, vocabulary.library);
@@ -213,7 +218,7 @@ public class ModelImago {
 
 				// String signature = manuscript.getSignature();
             	// String segnatura_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca/segnatura"; // !METTERE UN IRI UNIVOCO!
-				String signature_iri = baseURI + "resources/" + s_library_place + "/" + s_library + "/" + s_signature + "/"; 
+				String signature_iri = baseURI + "resources/" + s_library_place + "/" + s_library + "/" + s_signature; 
 				Resource r_signature = model.createResource(signature_iri);
             	Literal l_signature = model.createTypedLiteral(signature);
 				model.add(r_signature, RDF.type, vocabulary.e42_identifier);
@@ -232,7 +237,7 @@ public class ModelImago {
 
 				//incipit proemio
 				String incipit_dedication = manuscript.getIncipitDedication();
-            	String incipit_dedication_iri = "https://imagoarchive.it/ontology/resources/incipit_dedication/"; // !METTERE UN IRI UNIVOCO NUMERICO!
+            	String incipit_dedication_iri = "https://imagoarchive.it/ontology/resources/incipit_dedication/" + s_library_place + "/" + s_library + "/" + s_signature + "/" + s_folios;  // !METTERE UN IRI UNIVOCO NUMERICO!
 				Resource r_incipit_dedication = model.createResource(incipit_dedication_iri);
             	Literal l_incipit_dedication = model.createTypedLiteral(incipit_dedication);
 				model.add(r_incipit_dedication, RDF.type, vocabulary.e90_symbolic_object);
