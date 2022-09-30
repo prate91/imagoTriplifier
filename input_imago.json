@@ -1,0 +1,184 @@
+[{
+	"id": 872,
+	"lemma": {
+		"work": {
+			"iri": "http://www.mirabileweb.it/title/descriptio-insulae-cretae-title/4834",
+			"title": "Descriptio insulae Cretae",
+            "altTitles": ["Title 2", "Title 3"],
+			"author": "http://www.mirabileweb.it/author/christophorus-bondelmontius-n-1385-ca-m-post-1430-author/22278"
+		},
+		"owner": "prate91",
+		"author": {
+			"iri": "http://www.mirabileweb.it/author/christophorus-bondelmontius-n-1385-ca-m-post-1430-author/22278",
+			"name": "Christophorus Bondelmontius",
+            "alias": ["Cristoforo Bondelmonti"],
+            "authorDate": {
+                "birthDate":{
+                    "startDate":"1365",
+                    "endDate":"",
+                    "uncertainty": false,
+                    "ante": false,
+                    "post": false,
+                    "romanNumerals": false
+                },
+                "deathDate":{
+                    "startDate":"1365",
+                    "endDate":"",
+                    "uncertainty": false,
+                    "ante": false,
+                    "post": false,
+                    "romanNumerals": false
+                },
+                "floruitDate":{
+                    "startDate":"",
+                    "endDate":"",
+                    "uncertainty": false,
+                    "ante": false,
+                    "post": false,
+                    "romanNumerals": false
+                },
+                "episcopusDate":{
+                    "startDate":"",
+                    "endDate":"",
+                    "uncertainty": false,
+                    "ante": false,
+                    "post": false,
+                    "romanNumerals": false
+                }
+            }
+		},
+		"genres": [{
+			"iri": "http://purl.org/bncf/tid/24527",
+			"name": "Agiografia"
+		}],
+		"places": [{
+			"iri": "http://www.wikidata.org/entity/Q34374",
+            "lat": "35.309722",
+			"lon": "24.893333",
+            "name": "Creta",
+            "country": {
+                "name": "Grecia",
+                "iri": "http://www.wikidata.org/entity/Q41"
+            }
+		}],
+		"manuscripts": [{
+			"url": "https://imagoarchive.it/manuscript/2018201",
+            "urlDescription": "https://imagoarchive.it/manuscript/2018201",
+			"folios": "ff. 1r-50v",
+			"sources": [{
+				"iri": "http://www.wikidata.org/entity/Q41",
+                "name": "Dizionario Bibliografico degli Italiani",
+                "abbreviation": "Potthast",
+                "pages": "p. 1967, p. 606;"
+            },
+            {
+				"iri": "http://www.wikidata.org/entity/Q41",
+                "name": "Dizionario Bibliografico degli Italiani",
+                "abbreviation": "DBI",
+                "pages": "XV, p. 199"
+            }],
+			"author": "Christofori Bondelmontis",
+			"title": "Descriptio insulae Cretae",
+			"lastMod": 1620307979.308322,
+            "date": {
+                "startDate":"1365",
+                "endDate":"",
+                "uncertainty": false,
+                "ante": false,
+                "post": false,
+                "romanNumerals": false
+        
+            },
+			"signature": "ROSSIANO 703",
+			"library": {
+				"iri": "http://www.wikidata.org/entity/Q213678",
+				"name": "Biblioteca Apostolica Vaticana",
+				"place": {
+					"iri": "http://www.wikidata.org/entity/Q237",
+					"lat": "41.904",
+					"lon": "12.453",
+					"name": "Citt\u00e0 del Vaticano",
+					"country": {
+                        "name": "Citt\u00e0 del Vaticano",
+                        "iri": "http://www.wikidata.org/entity/Q237"
+                    }
+
+				}
+			},
+			"annotator": {
+                "username": "prate91",
+                "name" : "Nicolò",
+                "surname" : "Pratelli"
+            },
+			"incipitText": "",
+			"explicitText": "",
+			"incipitDedication": "",
+			"explicitDedication": "",
+            "decoration": "",
+            "notes":""
+		}],
+		"printEditions": [{
+            "date": {
+                "startDate":"1897",
+                "endDate":"",
+                "uncertainty": false,
+                "ante": false,
+                "post": false,
+                "romanNumerals": false
+        
+            },
+			"notes": "",
+			"place": {
+				"iri": "http://www.wikidata.org/entity/Q2044",
+                "lat": "43.771389",
+                "lon": "11.254167",
+                "name": "Firenze",
+                "country": {
+                    "name": "Italia",
+                    "iri": "http://www.wikidata.org/entity/Q38"
+                }
+			},
+            "placeAsAppear": "Firenze",
+			"author": "prova",
+			"figures": "",
+			"pages": "",
+			"title": "prova",
+			"editor": "",
+			"format": "",
+			"curator": "",
+			"ecdotic": "",
+            "languageTraduction": "",
+			"edition": "ristampa",
+			"lastMod": 1619789342.8974693,
+			"prefator": "",
+			"annotator": {
+                "username": "prate91",
+                "name" : "Nicolò",
+                "surname" : "Pratelli"
+            },
+			"dateEdition": {
+                "startDate":"1897",
+                "endDate":"",
+                "uncertainty": false,
+                "ante": false,
+                "post": false,
+                "romanNumerals": false
+        
+            },
+			"primarySources": "",
+			"otherContents": "",
+			"sources": [{
+				"iri": "http://www.wikidata.org/entity/Q41",
+                "name": "Dizionario Bibliografico degli Italiani",
+                "abbreviation": "Potthast",
+                "pages": "p. 1967, p. 606;"
+            },
+            {
+				"iri": "http://www.wikidata.org/entity/Q41",
+                "name": "Dizionario Bibliografico degli Italiani",
+                "abbreviation": "DBI",
+                "pages": "XV, p. 199"
+            }]
+		}]
+	}
+}]
