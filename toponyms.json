@@ -52,8 +52,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1004"
    },
    {
-      "name":"Egyptus",
-      "lemma":"Egyptus",
+      "name":"Egiptus",
+      "lemma":"Egiptus",
       "form":"Egipto",
       "labelIta":"Egitto",
       "labelEng":"Egypt",
@@ -67,7 +67,7 @@
       "occMonarchia":"3",
       "occQuestio":"0",
       "totOccurrences":"5",
-      "context":"Qui modus tractandi, ut melius pateat, potest considerari in hiis versibus: «In exitu Israel de <i>Egipto</i>, domus Iacob de populo barbaro, facta est Iudea sanctificatio eius, Israel potestas eius». Nam si ad litteram solam inspiciamus, significatur nobis exitus filiorum Israel de Egipto, tempore Moysis; si ad allegoriam, nobis significatur nostra redemptio facta per Christum; si ad moralem sensum, significatur nobis conversio anime de luctu et miseria peccati ad statum gratie; si ad anagogicum, significatur exitus anime sancte ab huius corruptionis servitute ad eterne glorie libertatem.",
+      "context":"Qui modus tractandi, ut melius pateat, potest considerari in hiis versibus: «In exitu Israel de <i>Egipto</i>*, domus Iacob de populo barbaro, facta est Iudea sanctificatio eius, Israel potestas eius». Nam si ad litteram solam inspiciamus, significatur nobis exitus filiorum Israel de Egipto, tempore Moysis; si ad allegoriam, nobis significatur nostra redemptio facta per Christum; si ad moralem sensum, significatur nobis conversio anime de luctu et miseria peccati ad statum gratie; si ad anagogicum, significatur exitus anime sancte ab huius corruptionis servitute ad eterne glorie libertatem.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Aegyptus",
       "placeText":"Ep. XIII 21",
       "position":"1",
@@ -78,8 +78,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/981503"
    },
    {
-      "name":"Egyptus",
-      "lemma":"Egyptus",
+      "name":"Egiptus",
+      "lemma":"Egiptus",
       "form":"Egipto",
       "labelIta":"Egitto",
       "labelEng":"Egypt",
@@ -104,8 +104,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/981503"
    },
    {
-      "name":"Egyptus",
-      "lemma":"Egyptus",
+      "name":"Egiptus",
+      "lemma":"Egiptus",
       "form":"Egipti",
       "labelIta":"Egitto",
       "labelEng":"Egypt",
@@ -130,8 +130,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/981503"
    },
    {
-      "name":"Egyptus",
-      "lemma":"Egyptus",
+      "name":"Egiptus",
+      "lemma":"Egiptus",
       "form":"Egiptum",
       "labelIta":"Egitto",
       "labelEng":"Egypt",
@@ -156,8 +156,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/981503"
    },
    {
-      "name":"Egyptus",
-      "lemma":"Egyptus",
+      "name":"Egiptus",
+      "lemma":"Egiptus",
       "form":"Egipti",
       "labelIta":"Egitto",
       "labelEng":"Egypt",
@@ -182,8 +182,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/981503"
    },
    {
-      "name":"Africa",
-      "lemma":"Africa",
+      "name":"Affrica",
+      "lemma":"Affrica",
       "form":"Affrica",
       "labelIta":"Africa",
       "labelEng":"Africa",
@@ -208,8 +208,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/775"
    },
    {
-      "name":"Africa",
-      "lemma":"Africa",
+      "name":"Affrica",
+      "lemma":"Affrica",
       "form":"Affrica",
       "labelIta":"Africa",
       "labelEng":"Africa",
@@ -234,8 +234,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/775"
    },
    {
-      "name":"Africa",
-      "lemma":"Africa",
+      "name":"Affrica",
+      "lemma":"Affrica",
       "form":"Affrice",
       "labelIta":"Africa",
       "labelEng":"Africa",
@@ -260,8 +260,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/775"
    },
    {
-      "name":"Africa",
-      "lemma":"Africa",
+      "name":"Affrica",
+      "lemma":"Affrica",
       "form":"Affrica",
       "labelIta":"Africa",
       "labelEng":"Africa",
@@ -286,8 +286,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/775"
    },
    {
-      "name":"Africa",
-      "lemma":"Africa",
+      "name":"Affrica",
+      "lemma":"Affrica",
       "form":"Affrica",
       "labelIta":"Africa",
       "labelEng":"Africa",
@@ -301,7 +301,7 @@
       "occMonarchia":"5",
       "occQuestio":"0",
       "totOccurrences":"8",
-      "context":"In hiis vero que De offitiis, de Catone dicebat: «Non enim alia in causa Marcus Cato fuit, alia ceteri qui se in <i>Affrica</i> Cesari tradiderunt. Atque ceteris forsan vitio datum esset si se interemissent, propterea quod levior eorum vita et mores fuerunt faciliores; Catoni vero cum incredibilem natura tribuisset gravitatem, perpetua constantia roborasset, in proposito consilio permansisset, moriendum ei potius quam tyrampni vultus aspiciendus fuit».",
+      "context":"In hiis vero que De offitiis, de Catone dicebat: «Non enim alia in causa Marcus Cato fuit, alia ceteri qui se in <i>Affrica</i>* Cesari tradiderunt. Atque ceteris forsan vitio datum esset si se interemissent, propterea quod levior eorum vita et mores fuerunt faciliores; Catoni vero cum incredibilem natura tribuisset gravitatem, perpetua constantia roborasset, in proposito consilio permansisset, moriendum ei potius quam tyrampni vultus aspiciendus fuit».",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Africa",
       "placeText":"Mon. II v 17",
       "position":"8",
@@ -691,7 +691,7 @@
       "occMonarchia":"7",
       "occQuestio":"0",
       "totOccurrences":"8",
-      "context":"Postquam res <i>Asye</i> evertere gentem",
+      "context":"Quantum vero ad hereditariam, quelibet pars tripartiti orbis tam avis quam coniugibus illum nobilitasse invenitur. Nam Asya propinquioribus avis, ut Assaraco et aliis qui Frigiam regnaverunt, Asye regionem; unde Poeta noster in tertio: Postquam res <i>Asye</i>* Priamique evertere gentem inmeritam visum superis.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Asia",
       "placeText":"Mon. II iii 10",
       "position":"2",
@@ -743,7 +743,7 @@
       "occMonarchia":"7",
       "occQuestio":"0",
       "totOccurrences":"8",
-      "context":"Quantum vero ad hereditariam, quelibet pars tripartiti orbis tam avis quam coniugibus illum nobilitasse invenitur. Nam Asya propinquioribus avis, ut Assaraco et aliis qui Frigiam regnaverunt, <i>Asye</i> regionem; unde Poeta noster in tertio: Postquam res Asye evertere gentem inmeritam visum superis.",
+      "context":"Quantum vero ad hereditariam, quelibet pars tripartiti orbis tam avis quam coniugibus illum nobilitasse invenitur. Nam Asya propinquioribus avis, ut Assaraco et aliis qui Frigiam regnaverunt, <i>Asye</i> regionem; unde Poeta noster in tertio: Postquam res Asye Priamique evertere gentem inmeritam visum superis.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Asia",
       "placeText":"Mon. II iii 10",
       "position":"4",
@@ -858,8 +858,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/981509"
    },
    {
-      "name":"Atlas",
-      "lemma":"Atlas",
+      "name":"Athlas",
+      "lemma":"Athlas",
       "form":"Athlanta",
       "labelIta":"Atlante",
       "labelEng":"Atlas Mountains",
@@ -884,8 +884,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/846"
    },
    {
-      "name":"Atlas",
-      "lemma":"Atlas",
+      "name":"Athlas",
+      "lemma":"Athlas",
       "form":"Athlas",
       "labelIta":"Atlante",
       "labelEng":"Atlas Mountains",
@@ -899,7 +899,7 @@
       "occMonarchia":"1",
       "occQuestio":"0",
       "totOccurrences":"2",
-      "context":"Quod vero Athlas de Affrica fuerit, mons in illa suo nomine dictus est testis, quem esse in Affrica dicit Orosius in sua mundi descriptione sic: «Ultimus autem finis eius est mons <i>Athlas</i> et insule quas Fortunatas vocant»; “eius”, idest Affrice, quia de ipsa loquebatur.",
+      "context":"Quod vero Athlas de Affrica fuerit, mons in illa suo nomine dictus est testis, quem esse in Affrica dicit Orosius in sua mundi descriptione sic: «Ultimus autem finis eius est mons <i>Athlas</i>* et insule quas Fortunatas vocant»; “eius”, idest Affrice, quia de ipsa loquebatur.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Atlas",
       "placeText":"Mon. II iii 13",
       "position":"6",
@@ -1299,11 +1299,11 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/863766"
    },
    {
-      "name":"Civitas castellana",
-      "lemma":"Civitas castellana",
+      "name":"Civitas Castellana",
+      "lemma":"Civitas Castellana",
       "form":"Civitate Castellana",
-      "labelIta":null,
-      "labelEng":null,
+      "labelIta":"Civita Castellana",
+      "labelEng":"Civita Castellana",
       "work":{
          "name":"De Vulgari Eloquentia",
          "iri":"https://www.wikidata.org/entity/Q18081"
@@ -1318,9 +1318,9 @@
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Castellanus",
       "placeText":"De vulg. I xiii 3",
       "position":"1",
-      "iriWD":null,
-      "latitude":null,
-      "longitude":null,
+      "iriWD":"https://www.wikidata.org/wiki/Q160954",
+      "latitude":"42.296111",
+      "longitude":"12.41",
       "VDLlemma":""
    },
    {
@@ -2145,7 +2145,7 @@
       "occMonarchia":"1",
       "occQuestio":"0",
       "totOccurrences":"1",
-      "context":"Quantum vero ad hereditariam, quelibet pars tripartiti orbis tam avis quam coniugibus illum nobilitasse invenitur. Nam Asya propinquioribus avis, ut Assaraco et aliis qui <i>Frigiam</i> regnaverunt, Asye regionem; unde Poeta noster in tertio: Postquam res Asye evertere gentem inmeritam visum superis.",
+      "context":"Quantum vero ad hereditariam, quelibet pars tripartiti orbis tam avis quam coniugibus illum nobilitasse invenitur. Nam Asya propinquioribus avis, ut Assaraco et aliis qui <i>Frigiam</i> regnaverunt, Asye regionem; unde Poeta noster in tertio: Postquam res Asye Priamique evertere gentem inmeritam visum superis.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Frigia",
       "placeText":"Mon. II iii 10",
       "position":"1",
@@ -2300,7 +2300,7 @@
       "occMonarchia":"1",
       "occQuestio":"0",
       "totOccurrences":"2",
-      "context":"Est locus, <i>Hesperiam</i> Grai cognomine dicunt,",
+      "context":"Quod autem Dardanus ab Europa originem duxerit, noster Vates in tertio cantat dicens: Est locus, <i>Hesperiam</i>* Grai cognomine dicunt, terra antiqua, potens armis atque ubere glebe. Oenotri coluere viri; nunc fama minores Ytaliam dixisse ducis de nomine gentem: hee nobis proprie sedes, hinc Dardanus ortus.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Hesperia",
       "placeText":"Mon. II iii 12",
       "position":"2",
@@ -2311,8 +2311,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Histria",
-      "lemma":"Histria",
+      "name":"Ystria",
+      "lemma":"Ystria",
       "form":"Ystria",
       "labelIta":"Istria",
       "labelEng":"Istria",
@@ -2507,7 +2507,7 @@
       "occMonarchia":"4",
       "occQuestio":"0",
       "totOccurrences":"11",
-      "context":"Precaveant sacratissimi regis alta consilia, ne celeste iudicium Samuelis illa verba reasperet: «Nonne cum parvulus esses in oculis tuis, caput in tribubus <i>Israel</i> factus es, te Dominus in regem super Israel, et misit te Deus in via et ait: Vade et interfice peccatores Amalech?». Nam et tu in regem sacratus es ut Amalech percutias et Agag non pareas, atque ulciscaris Illum qui misit te de gente brutali et de festina sua sollempnitate; que quidem et Amalech et Agag sonare dicuntur.",
+      "context":"Precaveant sacratissimi regis alta consilia, ne celeste iudicium Samuelis illa verba reasperet: «Nonne cum parvulus esses in oculis tuis, caput in tribubus <i>Israel</i>* factus es, te Dominus in regem super Israel, et misit te Deus in via et ait: Vade et interfice peccatores Amalech?». Nam et tu in regem sacratus es ut Amalech percutias et Agag non pareas, atque ulciscaris Illum qui misit te de gente brutali et de festina sua sollempnitate; que quidem et Amalech et Agag sonare dicuntur.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Israel",
       "placeText":"Ep. VII 19",
       "position":"2",
@@ -2532,7 +2532,7 @@
       "occMonarchia":"4",
       "occQuestio":"0",
       "totOccurrences":"11",
-      "context":"Precaveant sacratissimi regis alta consilia, ne celeste iudicium Samuelis illa verba reasperet: «Nonne cum parvulus esses in oculis tuis, caput in tribubus Israel factus es, te Dominus in regem super <i>Israel</i>, et misit te Deus in via et ait: Vade et interfice peccatores Amalech?». Nam et tu in regem sacratus es ut Amalech percutias et Agag non pareas, atque ulciscaris Illum qui misit te de gente brutali et de festina sua sollempnitate; que quidem et Amalech et Agag sonare dicuntur.",
+      "context":"Precaveant sacratissimi regis alta consilia, ne celeste iudicium Samuelis illa verba reasperet: «Nonne cum parvulus esses in oculis tuis, caput in tribubus Israel factus es, te Dominus in regem super <i>Israel</i>*, et misit te Deus in via et ait: Vade et interfice peccatores Amalech?». Nam et tu in regem sacratus es ut Amalech percutias et Agag non pareas, atque ulciscaris Illum qui misit te de gente brutali et de festina sua sollempnitate; que quidem et Amalech et Agag sonare dicuntur.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Israel",
       "placeText":"Ep. VII 19",
       "position":"3",
@@ -2582,7 +2582,7 @@
       "occMonarchia":"4",
       "occQuestio":"0",
       "totOccurrences":"11",
-      "context":"Qui modus tractandi, ut melius pateat, potest considerari in hiis versibus: «In exitu <i>Israel</i> de Egipto, domus Iacob de populo barbaro, facta est Iudea sanctificatio eius, Israel potestas eius». Nam si ad litteram solam inspiciamus, significatur nobis exitus filiorum Israel de Egipto, tempore Moysis; si ad allegoriam, nobis significatur nostra redemptio facta per Christum; si ad moralem sensum, significatur nobis conversio anime de luctu et miseria peccati ad statum gratie; si ad anagogicum, significatur exitus anime sancte ab huius corruptionis servitute ad eterne glorie libertatem.",
+      "context":"Qui modus tractandi, ut melius pateat, potest considerari in hiis versibus: «In exitu <i>Israel</i>* de Egipto, domus Iacob de populo barbaro, facta est Iudea sanctificatio eius, Israel potestas eius». Nam si ad litteram solam inspiciamus, significatur nobis exitus filiorum Israel de Egipto, tempore Moysis; si ad allegoriam, nobis significatur nostra redemptio facta per Christum; si ad moralem sensum, significatur nobis conversio anime de luctu et miseria peccati ad statum gratie; si ad anagogicum, significatur exitus anime sancte ab huius corruptionis servitute ad eterne glorie libertatem.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Israel",
       "placeText":"Ep. XIII 21",
       "position":"5",
@@ -2607,7 +2607,7 @@
       "occMonarchia":"4",
       "occQuestio":"0",
       "totOccurrences":"11",
-      "context":"Qui modus tractandi, ut melius pateat, potest considerari in hiis versibus: «In exitu Israel de Egipto, domus Iacob de populo barbaro, facta est Iudea sanctificatio eius, <i>Israel</i> potestas eius». Nam si ad litteram solam inspiciamus, significatur nobis exitus filiorum Israel de Egipto, tempore Moysis; si ad allegoriam, nobis significatur nostra redemptio facta per Christum; si ad moralem sensum, significatur nobis conversio anime de luctu et miseria peccati ad statum gratie; si ad anagogicum, significatur exitus anime sancte ab huius corruptionis servitute ad eterne glorie libertatem.",
+      "context":"Qui modus tractandi, ut melius pateat, potest considerari in hiis versibus: «In exitu Israel de Egipto, domus Iacob de populo barbaro, facta est Iudea sanctificatio eius, <i>Israel</i>* potestas eius». Nam si ad litteram solam inspiciamus, significatur nobis exitus filiorum Israel de Egipto, tempore Moysis; si ad allegoriam, nobis significatur nostra redemptio facta per Christum; si ad moralem sensum, significatur nobis conversio anime de luctu et miseria peccati ad statum gratie; si ad anagogicum, significatur exitus anime sancte ab huius corruptionis servitute ad eterne glorie libertatem.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Israel",
       "placeText":"Ep. XIII 21",
       "position":"6",
@@ -2657,7 +2657,7 @@
       "occMonarchia":"4",
       "occQuestio":"0",
       "totOccurrences":"11",
-      "context":"Sed genus humanum maxime Deo assimilatur quando maxime est unum: vera enim ratio unius in solo illo est; propter quod scriptum est: «Audi, <i>Israel</i>, Dominus Deus tuus unus est».",
+      "context":"Sed genus humanum maxime Deo assimilatur quando maxime est unum: vera enim ratio unius in solo illo est; propter quod scriptum est: «Audi, <i>Israel</i>*, Dominus Deus tuus unus est».",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Israel",
       "placeText":"Mon. I viii 3",
       "position":"8",
@@ -2682,7 +2682,7 @@
       "occMonarchia":"4",
       "occQuestio":"0",
       "totOccurrences":"11",
-      "context":"Nam hoc ratio humana per se iustum intueri non potest, fide tamen adiuta potest. Scriptum est enim ad Hebreos: «Inpossibile est sine fide placere Deo»; et in Levitico: «Homo quilibet de domo <i>Israel</i>, qui occiderit bovem aut ovem aut capram in castris vel extra castra et non obtulerit ad hostium tabernaculi oblationem Domino, sanguinis reus erit».",
+      "context":"Nam hoc ratio humana per se iustum intueri non potest, fide tamen adiuta potest. Scriptum est enim ad Hebreos: «Inpossibile est sine fide placere Deo»; et in Levitico: «Homo quilibet de domo <i>Israel</i>*, qui occiderit bovem aut ovem aut capram in castris vel extra castra et non obtulerit ad hostium tabernaculi oblationem Domino, sanguinis reus erit».",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Israel",
       "placeText":"Mon. II vii 5",
       "position":"10",
@@ -2692,8 +2692,8 @@
       "VDLlemma":""
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2718,8 +2718,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2744,8 +2744,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2770,8 +2770,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2796,8 +2796,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytaliam",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2822,8 +2822,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2848,8 +2848,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2874,8 +2874,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2900,8 +2900,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2926,8 +2926,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytaliam",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2952,8 +2952,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -2978,8 +2978,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3004,8 +3004,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3030,8 +3030,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3056,8 +3056,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3082,8 +3082,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3108,8 +3108,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3134,8 +3134,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3160,8 +3160,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3186,8 +3186,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3212,8 +3212,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3238,8 +3238,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3264,8 +3264,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytaliam",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3290,8 +3290,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3316,9 +3316,9 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia*",
-      "lemma":"Italia*",
-      "form":"Ytalie*",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
+      "form":"Ytalie",
       "labelIta":"Italia",
       "labelEng":"Italy",
       "work":{
@@ -3331,7 +3331,7 @@
       "occMonarchia":"5",
       "occQuestio":"0",
       "totOccurrences":"54",
-      "context":"respiee, cui regnum <i>Ytalie</i> romanaque tellus",
+      "context":"respice, cui regnum <i>Ytalie</i>* romanaque tellus",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Italia",
       "placeText":"Ep. VII 17",
       "position":"35",
@@ -3342,8 +3342,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytaliam",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3368,8 +3368,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytaliam",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3394,8 +3394,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3420,8 +3420,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytaliam",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3435,7 +3435,7 @@
       "occMonarchia":"5",
       "occQuestio":"0",
       "totOccurrences":"54",
-      "context":"<i>Ytaliam</i> dixisse ducis de nomine gentem:",
+      "context":"Quod autem Dardanus ab Europa originem duxerit, noster Vates in tertio cantat dicens: Est locus, Hesperiam Grai cognomine dicunt, terra antiqua, potens armis atque ubere glebe. Oenotri coluere viri; nunc fama minores <i>Ytaliam</i>* dixisse ducis de nomine gentem: hee nobis proprie sedes, hinc Dardanus ortus.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Italia",
       "placeText":"Mon. II iii 12",
       "position":"43",
@@ -3446,8 +3446,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3472,8 +3472,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytaliam",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3487,7 +3487,7 @@
       "occMonarchia":"5",
       "occQuestio":"0",
       "totOccurrences":"54",
-      "context":"<i>Ytaliam</i> regeret.",
+      "context":"<i>Ytaliam</i>* regeret.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Italia",
       "placeText":"Mon. II vi 10",
       "position":"46",
@@ -3498,8 +3498,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3524,8 +3524,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/1052"
    },
    {
-      "name":"Italia",
-      "lemma":"Italia",
+      "name":"Ytalia",
+      "lemma":"Ytalia",
       "form":"Ytalia",
       "labelIta":"Italia",
       "labelEng":"Italy",
@@ -3565,7 +3565,7 @@
       "occMonarchia":"0",
       "occQuestio":"0",
       "totOccurrences":"1",
-      "context":"Qui modus tractandi, ut melius pateat, potest considerari in hiis versibus: «In exitu Israel de Egipto, domus Iacob de populo barbaro, facta est <i>Iudea</i> sanctificatio eius, Israel potestas eius». Nam si ad litteram solam inspiciamus, significatur nobis exitus filiorum Israel de Egipto, tempore Moysis; si ad allegoriam, nobis significatur nostra redemptio facta per Christum; si ad moralem sensum, significatur nobis conversio anime de luctu et miseria peccati ad statum gratie; si ad anagogicum, significatur exitus anime sancte ab huius corruptionis servitute ad eterne glorie libertatem.",
+      "context":"Qui modus tractandi, ut melius pateat, potest considerari in hiis versibus: «In exitu Israel de Egipto, domus Iacob de populo barbaro, facta est <i>Iudea</i>* sanctificatio eius, Israel potestas eius». Nam si ad litteram solam inspiciamus, significatur nobis exitus filiorum Israel de Egipto, tempore Moysis; si ad allegoriam, nobis significatur nostra redemptio facta per Christum; si ad moralem sensum, significatur nobis conversio anime de luctu et miseria peccati ad statum gratie; si ad anagogicum, significatur exitus anime sancte ab huius corruptionis servitute ad eterne glorie libertatem.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Iudaea",
       "placeText":"Ep. XIII 21",
       "position":"1",
@@ -3988,9 +3988,9 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/845"
    },
    {
-      "name":"Oceanus*",
-      "lemma":"Oceanus*",
-      "form":"Oceano*",
+      "name":"Oceanus",
+      "lemma":"Oceanus",
+      "form":"Oceano",
       "labelIta":"oceano",
       "labelEng":"ocean",
       "work":{
@@ -4003,7 +4003,7 @@
       "occMonarchia":"0",
       "occQuestio":"0",
       "totOccurrences":"4",
-      "context":"imperium <i>Oceano</i>, famam qui terminet astris.",
+      "context":"imperium <i>Oceano</i>*, famam qui terminet astris.",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Oceanus",
       "placeText":"Ep. VII 13",
       "position":"3",
@@ -5334,8 +5334,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/462492"
    },
    {
-      "name":"Troia",
-      "lemma":"Troia",
+      "name":"Troya",
+      "lemma":"Troya",
       "form":"Troya",
       "labelIta":"Troia",
       "labelEng":"Troy",
@@ -5360,8 +5360,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/550595"
    },
    {
-      "name":"Troia",
-      "lemma":"Troia",
+      "name":"Troya",
+      "lemma":"Troya",
       "form":"Troya",
       "labelIta":"Troia",
       "labelEng":"Troy",
@@ -5375,7 +5375,7 @@
       "occMonarchia":"2",
       "occQuestio":"0",
       "totOccurrences":"7",
-      "context":"quem tibi iam <i>Troya</i> peperit fumante Creusa?",
+      "context":"Similiter etiam coniugio nobilitatum fuisse reperio. Prima coniunx Creusa, Priami regis filia, de Asya fuit, ut superius haberi potest per ea que dicta sunt. Et quod fuerit coniunx testimonium perhibet noster Poeta in tertio, ubi Andromache de Ascanio filio Eneam genitorem interrogat sic: Quid puer Ascanius et vescitur aura, quem tibi iam <i>Troya</i>* peperit fumante Creusa?",
       "urlDS":"https://dantesearch.dantenetwork.it/api.html?lemma=Troia",
       "placeText":"Mon. II iii 14",
       "position":"6",
@@ -6108,8 +6108,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/413373"
    },
    {
-      "name":"Libya",
-      "lemma":"Libya",
+      "name":"Lybia",
+      "lemma":"Lybia",
       "form":"Libya",
       "labelIta":"Libia",
       "labelEng":"Libya",
@@ -6134,8 +6134,8 @@
       "iri_pleiades":"https://pleiades.stoa.org/places/716588"
    },
    {
-      "name":"Libies",
-      "lemma":"Libies",
+      "name":"Lybia",
+      "lemma":"Lybia",
       "form":"Libies",
       "labelIta":"Libia",
       "labelEng":"Libya",
@@ -6244,32 +6244,6 @@
       "labelIta": "Po",
       "labelEng": "Po",
       "work": {
-         "name": "Egloge",
-         "iri": "https://www.wikidata.org/entity/Q921273"
-      },
-      "occDeVulgari": "0",
-      "occEgloge": "1",
-      "occEpistole": "0",
-      "occMonarchia": "0",
-      "occQuestio": "0",
-      "totOccurrences": "2",
-      "context": "Si tamen <i>Eridani</i> michi spem mediamne dedisti",
-      "urlDS": "https://dantesearch.dantenetwork.it/api.html?lemma=Eridanus",
-      "placeText": "Eg. I 47",
-      "position": "1",
-      "iriWD": "https://www.wikidata.org/entity/Q643",
-      "latitude": "44.701444",
-      "longitude": "7.093056",
-      "VDLlemma": "",
-	  "iri_pleiades":"https://pleiades.stoa.org/places/393469"
-   },
-   {
-      "name": "Eridanus",
-      "lemma": "Eridanus",
-      "form": "Eridani",
-      "labelIta": "Po",
-      "labelEng": "Po",
-      "work": {
          "name": "Epistole",
          "iri": "https://www.wikidata.org/entity/Q3730666"
       },
@@ -6284,8 +6258,8 @@
       "placeText": "Ep. VII 11",
       "position": "2",
       "iriWD": "https://www.wikidata.org/entity/Q643",
-      "latitude": "44.701444",
-      "longitude": "7.093056",
+      "latitude":"44.97",
+      "longitude":"12.546944444",
       "VDLlemma": "",
 	  "iri_pleiades":"https://pleiades.stoa.org/places/393469"
    },
@@ -6314,32 +6288,6 @@
       "longitude": "-6.298979",
       "VDLlemma": "",
 	  "iri_pleiades":"https://pleiades.stoa.org/places/256177"
-   },
-   {
-      "name": "Perse",
-      "lemma": "Perse",
-      "form": "Persarum",
-      "labelIta": "Iran",
-      "labelEng": "Iran",
-      "work": {
-         "name": "Monarchia",
-         "iri": "https://www.wikidata.org/entity/Q134221"
-      },
-      "occDeVulgari": "0",
-      "occEgloge": "0",
-      "occEpistole": "0",
-      "occMonarchia": "3",
-      "occQuestio": "0",
-      "totOccurrences": "3",
-      "context": "Deinde Cirus, rex <i>Persarum</i>, temptavit hoc: qui, Babilone destructa imperioque Babilonis ad Persas translato, nec adhuc partes occidentales expertus, sub Tamiride regina Scitharum vitam simul et intentionem deposuit.",
-      "urlDS": "https://dantesearch.dantenetwork.it/api.html?lemma=Persae",
-      "placeText": "Mon. II viii 6",
-      "position": "1",
-      "iriWD": "https://www.wikidata.org/entity/Q794",
-      "latitude": "32",
-      "longitude": "53",
-      "VDLlemma": "",
-	  "iri_pleiades":""
    },
    {
       "name": "Perse",
