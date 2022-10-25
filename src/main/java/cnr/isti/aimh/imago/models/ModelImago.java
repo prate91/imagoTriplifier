@@ -76,7 +76,7 @@ public class ModelImago {
 
 			int id = e.getId();                         // get the lemma id
 			Lemma lemma = e.getLemma();                 // get the lemma content
-			String lemmaURI = baseURI + "resources/lemma/" + id; // Make  the IRI of expression creation
+			String lemmaURI = baseURI + "resources/lemma/" + id; // Make  the IRI of lemma (ie expression creation)
 
 			////////////////////
 			// MAKE RESOURCES //
@@ -98,9 +98,15 @@ public class ModelImago {
 			Literal l_work_title = model.createTypedLiteral(e.getLemma().getWork().getTitle());
 
 
-			/////////////////////////////
-			// ADDING TRIPLES TO MODEL //
-			/////////////////////////////
+			///////////
+			// LEMMA //
+			///////////
+
+			// Creating resources 
+
+			// Create literals 
+
+			// Create blank nodes
 
 			model.add(r_author, RDF.type, vocabulary.author);
 			model.add(r_work, RDF.type, vocabulary.f2_expression);
@@ -119,7 +125,7 @@ public class ModelImago {
 			model.add(_b_work, vocabulary.p190_has_symbolic_content, l_work_title);
 
 
-
+			
 			for(Genre genre : e.getLemma().getGenres()) { // for any genre in lemma
 				Resource r_genre = model.createResource(genre.getIri());
 				Literal l_genre = model.createTypedLiteral(genre.getName());
