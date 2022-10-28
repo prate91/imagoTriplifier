@@ -85,18 +85,19 @@ public class ModelImago {
 			
 			//  Make author resource getting the iri from the object author inside the object lemma
 			// ex. http://www.mirabileweb.it/author/christophorus-bondelmontius-n-1385-ca-m-post-1430-author/22278
-			Resource r_author = model.createResource(e.getLemma().getAuthor().getIri());
+			Resource r_author = model.createResource(lemma.getAuthor().getIri());
 			// Make work resource getting the iri of the work inside the lemma object
 			// ex. http://www.mirabileweb.it/title/descriptio-insulae-cretae-title/4834
-			Resource r_work = model.createResource(e.getLemma().getWork().getIri());
+			Resource r_work = model.createResource(lemma.getWork().getIri());
 			// Make the resource Expression Creation. As IRI we pass the lemma IRI created above
 			// ex. https://https://www.imagoarchive.it/ontology/resources/lemma/0000
 			Resource r_expression_creation = model.createResource(lemmaURI);
 
 
 			
-			Literal l_italian_author_name = model.createTypedLiteral(e.getLemma().getAuthor().getAlias().get(0));
-			Literal l_work_title = model.createTypedLiteral(e.getLemma().getWork().getTitle());
+			// Literal l_italian_author_name = model.createTypedLiteral(lemma.getAuthor().getAlias().get(0));
+			Literal l_italian_author_name = model.createTypedLiteral(lemma.getAuthor().getName());
+			Literal l_work_title = model.createTypedLiteral(lemma.getWork().getTitle());
 
 
 			///////////
@@ -127,7 +128,7 @@ public class ModelImago {
 
 
 			
-			for(Genre genre : e.getLemma().getGenres()) { // for any genre in lemma
+			for(Genre genre : lemma.getGenres()) { // for any genre in lemma
 				Resource r_genre = model.createResource(genre.getIri());
 				Literal l_genre = model.createTypedLiteral(genre.getName());
 				model.add(r_genre, RDF.type, vocabulary.genre);
@@ -135,7 +136,7 @@ public class ModelImago {
 				model.add(r_genre, vocabulary.has_genre_name, l_genre);
 			}
 
-            for(Place place : e.getLemma().getPlaces()) {
+            for(Place place : lemma.getPlaces()) {
             	String place_iri = place.getIri();
             	Resource r_place = model.createResource(place_iri);
             	Resource r_toponym = model.createResource(); // che iri dare? 
@@ -161,10 +162,11 @@ public class ModelImago {
             }
 
 			
-            for(Manuscript manuscript : e.getLemma().getManuscripts()) {
+            for(Manuscript manuscript : lemma.getManuscripts()) {
 
 				// Get the strings from json
 				String library = manuscript.getLibrary().getName();
+				// System.out.println(library);
 				String library_place = manuscript.getLibrary().getPlace().getName();
 				String signature = manuscript.getSignature();
 				String folios = manuscript.getFolios();
@@ -174,10 +176,10 @@ public class ModelImago {
 				String explicit_dedication = manuscript.getExplicitDedication();
 				String incipit_text = manuscript.getIncipitText();
 				String explicit_text = manuscript.getExplicitText();
-				String date_manuscript = manuscript.getStringDatazione();
+				String date_manuscript = manuscript.getDateString();
 				String sources = "";
 				for(Source source : manuscript.getSources()) {
-					sources += source.getAbbreviation() + ", <a href='" + source.getIri() + "'>" + source.getName() + "</a>, " + source.getPages() + " <br />";
+					sources += source.getName() + ", <a href='" + source.getIri() + "'>" + source.getDescription() + "</a>, " + source.getSpecific() + " <br />";
 				}
 
 				
@@ -302,14 +304,14 @@ public class ModelImago {
 				m_count++;
 
             }
-			for(PrintEdition print_edition: e.getLemma().getPrintEditions()) {
+			for(PrintEdition print_edition: lemma.getPrintEditions()) {
 
 				// Get the strings from json
 				String edition = print_edition.getEdition();
 				String ecdotic = print_edition.getEcdotic();
 				String sources = "";
 				for(Source source : print_edition.getSources()) {
-					sources += source.getAbbreviation() + ", <a href='" + source.getIri() + "'>" + source.getName() + "</a>, " + source.getPages() + " <br />";
+					sources += source.getName() + ", <a href='" + source.getIri() + "'>" + source.getDescription() + "</a>, " + source.getSpecific() + " <br />";
 				}
 
 				// Parse the strings to make IRIs
@@ -345,7 +347,7 @@ public class ModelImago {
 				Literal l_curator = model.createTypedLiteral(print_edition.getCurator());
 				Literal l_place_name_as_appear = model.createTypedLiteral(print_edition.getPlaceAsAppear());
 				Literal l_coordinates = model.createTypedLiteral(toWKT(print_edition.getPlace().getLat(), print_edition.getPlace().getLon()));
-				Literal l_date_print_edition = model.createTypedLiteral(print_edition.getStringDatazione());
+				Literal l_date_print_edition = model.createTypedLiteral(print_edition.getDateString());
 				Literal l_publisher = model.createTypedLiteral( print_edition.getEditor());
 				Literal l_format = model.createTypedLiteral(print_edition.getFormat());
 				Literal l_pages = model.createTypedLiteral(print_edition.getPages());
@@ -362,7 +364,6 @@ public class ModelImago {
 				// Create all blank nodes
 				Resource _b_print_edition_author = model.createResource();
 				Resource _b_print_edition_title = model.createResource();
-				Resource _b_folios = model.createResource();
 				Resource _b_curator = model.createResource();
 				Resource _b_publisher = model.createResource();
 				Resource _b_format = model.createResource();
@@ -417,6 +418,12 @@ public class ModelImago {
 				model.add(r_print_edition, vocabulary.p2_has_type, r_ecdotic);
 				model.add(r_ecdotic, vocabulary.p190_has_symbolic_content, l_ecdotic);
 				model.add(r_print_edition, vocabulary.has_secondary_sources, l_sources);
+
+				
+				// TO-DO 
+
+				// -[ ] Other contents
+
 
 				p_count++;
 

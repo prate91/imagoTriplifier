@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "iri",
     "name",
-    "abbreviation",
+    "user",
+    "description",
     "pages"
 })
 @Generated("jsonschema2pojo")
@@ -25,10 +26,12 @@ public class Source {
     private String iri;
     @JsonProperty("name")
     private String name;
-    @JsonProperty("abbreviation")
-    private String abbreviation;
-    @JsonProperty("pages")
-    private String pages;
+    @JsonProperty("user")
+    private Boolean user;
+    @JsonProperty("description")
+    private String description;
+    @JsonProperty("specific")
+    private String specific;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -52,24 +55,34 @@ public class Source {
         this.name = name;
     }
 
-    @JsonProperty("abbreviation")
-    public String getAbbreviation() {
-        return abbreviation;
+    @JsonProperty("user")
+    public Boolean getUser() {
+        return user;
     }
 
-    @JsonProperty("abbreviation")
-    public void setAbbreviation(String abbreviation) {
-        this.abbreviation = abbreviation;
+    @JsonProperty("user")
+    public void setUser(Boolean user) {
+        this.user = user;
     }
 
-    @JsonProperty("pages")
-    public String getPages() {
-        return pages;
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
     }
 
-    @JsonProperty("pages")
-    public void setPages(String pages) {
-        this.pages = pages;
+    @JsonProperty("description")
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @JsonProperty("specific")
+    public String getSpecific() {
+        return specific;
+    }
+
+    @JsonProperty("specific")
+    public void setSpecific(String specific) {
+        this.specific = specific;
     }
 
     @JsonAnyGetter

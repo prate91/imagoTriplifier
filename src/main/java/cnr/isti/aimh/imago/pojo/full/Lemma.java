@@ -15,8 +15,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "work",
-    "owner",
     "author",
+    "abstract",
     "genres",
     "places",
     "manuscripts",
@@ -27,10 +27,10 @@ public class Lemma {
 
     @JsonProperty("work")
     private Work work;
-    @JsonProperty("owner")
-    private String owner;
     @JsonProperty("author")
     private Author author;
+    @JsonProperty("abstract")
+    private String abs;
     @JsonProperty("genres")
     private List<Genre> genres = null;
     @JsonProperty("places")
@@ -52,14 +52,14 @@ public class Lemma {
         this.work = work;
     }
 
-    @JsonProperty("owner")
-    public String getOwner() {
-        return owner;
+    @JsonProperty("abstract")
+    public String getAbstract() {
+        return abs;
     }
 
-    @JsonProperty("owner")
-    public void setOwner(String owner) {
-        this.owner = owner;
+    @JsonProperty("abstract")
+    public void setAbstract(String abs) {
+        this.abs = abs;
     }
 
     @JsonProperty("author")
@@ -129,7 +129,7 @@ public class Lemma {
     sb.append("\n");
     sb.append("owner");
     sb.append(" -> ");
-    sb.append(((this.owner == null)?"<null>":this.owner));
+    sb.append(((this.abs == null)?"<null>":this.abs));
     sb.append("\n");
     sb.append("work");
     sb.append("\n");

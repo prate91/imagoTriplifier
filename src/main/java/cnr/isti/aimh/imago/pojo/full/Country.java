@@ -13,8 +13,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "name",
-    "iri"
+    "iri",
+    "name"
 })
 @Generated("jsonschema2pojo")
 public class Country {

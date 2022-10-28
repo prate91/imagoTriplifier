@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import org.apache.jena.ontology.OntModel;
 
+import cnr.isti.aimh.imago.models.ModelImago;
 import cnr.isti.aimh.imago.models.ModelToponyms;
 import cnr.isti.aimh.imago.util.ConfigProperties;
 import cnr.isti.aimh.imago.util.Fuseki;
@@ -65,8 +66,11 @@ public class ImagoTriplifier {
                 }
 				break;
 			case 'I' : // Imago lemmas triplification
-				// controllo se utente gi� autenticato
 				jin = new JacksonImport(prop.getJson_imago(), c);
+				OntModel model_imago = ModelImago.populateModel(ModelImago.importModel(prop.getImago_ontology()), jin.getList_lemmas());
+				if(fusekiKB.InsertModelIntoGraph(model_imago, "archive")){
+                    System.out.println("The model is triplified and put in IMAGO KB");
+                }
 				break;
             }
 		} while (c!='E');
