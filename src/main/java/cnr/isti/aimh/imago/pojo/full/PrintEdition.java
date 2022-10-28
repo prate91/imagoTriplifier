@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "date",
+    "stringDatazione",
     "notes",
     "place",
     "placeAsAppear",
@@ -41,6 +42,8 @@ public class PrintEdition {
 
     @JsonProperty("date")
     private Date date;
+    @JsonProperty("stringDatazione")
+    private String stringDatazione;
     @JsonProperty("notes")
     private String notes;
     @JsonProperty("place")
@@ -92,6 +95,16 @@ public class PrintEdition {
     @JsonProperty("date")
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    @JsonProperty("stringDatazione")
+    public String getStringDatazione() {
+        return stringDatazione;
+    }
+
+    @JsonProperty("stringDatazione")
+    public void setStringDatazione(String stringDatazione) {
+        this.stringDatazione = stringDatazione;
     }
 
     @JsonProperty("notes")
