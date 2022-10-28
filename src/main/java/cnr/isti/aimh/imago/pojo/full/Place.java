@@ -2,6 +2,7 @@
 package cnr.isti.aimh.imago.pojo.full;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -17,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "lat",
     "lon",
     "name",
+    "alias",
     "country"
 })
 @Generated("jsonschema2pojo")
@@ -30,6 +32,8 @@ public class Place {
     private String lon;
     @JsonProperty("name")
     private String name;
+    @JsonProperty("alias")
+    private List<String> alias;
     @JsonProperty("country")
     private Country country;
     @JsonIgnore
@@ -73,6 +77,16 @@ public class Place {
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
+    }
+
+    @JsonProperty("alias")
+    public List<String> getAlias() {
+        return alias;
+    }
+
+    @JsonProperty("alias")
+    public void setAlias(List<String> alias) {
+        this.alias = alias;
     }
 
     @JsonProperty("country")

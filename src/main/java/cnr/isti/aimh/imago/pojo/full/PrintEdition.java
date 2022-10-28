@@ -14,36 +14,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "date",
-    "stringDatazione",
-    "notes",
     "place",
     "placeAsAppear",
-    "author",
+    "notes",
     "figures",
-    "pages",
+    "sources",
+    "author",
     "title",
-    "editor",
+    "lastMod",
+    "date",
+    "pages",
     "format",
+    "editor",
     "curator",
+    "annotator",
     "ecdotic",
     "languageTraduction",
     "edition",
-    "lastMod",
     "prefator",
-    "annotator",
     "dateEdition",
     "primarySources",
     "otherContents",
-    "sources"
+    "dateString"
 })
 @Generated("jsonschema2pojo")
 public class PrintEdition {
 
     @JsonProperty("date")
     private Date date;
-    @JsonProperty("stringDatazione")
-    private String stringDatazione;
+    @JsonProperty("dateString")
+    private String dateString;
     @JsonProperty("notes")
     private String notes;
     @JsonProperty("place")
@@ -97,14 +97,14 @@ public class PrintEdition {
         this.date = date;
     }
 
-    @JsonProperty("stringDatazione")
-    public String getStringDatazione() {
-        return stringDatazione;
+    @JsonProperty("dateString")
+    public String getDateString() {
+        return dateString;
     }
 
-    @JsonProperty("stringDatazione")
-    public void setStringDatazione(String stringDatazione) {
-        this.stringDatazione = stringDatazione;
+    @JsonProperty("dateString")
+    public void setDateString(String dateString) {
+        this.dateString = dateString;
     }
 
     @JsonProperty("notes")
