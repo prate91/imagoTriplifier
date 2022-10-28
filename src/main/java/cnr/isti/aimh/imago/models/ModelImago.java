@@ -71,7 +71,8 @@ public class ModelImago {
 		* - The Blank Nodes have the _b_ prefixed in the name of the variable
         */
 
-		
+		int m_count = 1;
+		int p_count = 1;
 		for (Root e : lemmas) { // For any lemma
 
 			int id = e.getId();                         // get the lemma id
@@ -159,266 +160,265 @@ public class ModelImago {
 
             }
 
-			// id contatore
-            int count = 0;
+			
             for(Manuscript manuscript : e.getLemma().getManuscripts()) {
 
+				// Get the strings from json
 				String library = manuscript.getLibrary().getName();
 				String library_place = manuscript.getLibrary().getPlace().getName();
 				String signature = manuscript.getSignature();
 				String folios = manuscript.getFolios();
-
-				String s_library = library.replaceAll(" ", "_").toLowerCase();
-				String s_library_place = library_place.replaceAll(" ", "_").toLowerCase();
-				String s_signature = signature.replaceAll(" ", "_").toLowerCase();
-				String s_folios = library.replaceAll(" ", "_").toLowerCase();
-
-            	// L'iri del manoscritto non c'e' e va creato
-            	// https://imagoarchive.it/ontology/resources/manuscript/biblioteca/segnatura/fogli
-				// Se fosse questo ci potrebbero essere due manoscritti con lo stesso iri e annotazioni diverse,
-				// a patto che l'annotatore non faccia errori di inserimento
-				String manuscript_iri = baseURI + "resources/manuscript/" + s_library_place + "/" + s_library + "/" + s_signature + "/" + s_folios;
-            	// String manuscript_iri = "https://imagoarchive.it/ontology/resources/manuscript"; // !METTERE UN ID!
-            	String manuscript_url = manuscript.getUrl(); // Questo rappresenta il link alla pagina web in cui il manoscritto e' riprodotto
-
-            	Resource r_manuscript = model.createResource(manuscript_iri);
-            	// Non importa dire che e' di tipo f5_item, basta dire che e' di tipo manuscript che e' sottoclasse di item
-            	// model.add(resource_Manuscript, RDF.type, f5_item);
-            	model.add(r_manuscript, RDF.type, vocabulary.manuscript);
-
-            	// f3_manifestation, la risorsa non c'e' e va creata
-            	// va assegnato un iri alla manifestation come per esempio
-            	// https://imagoarchive.it/ontology/resources/manifestation/biblioteca/segnatura/fogli
-            	// String manifestation_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca"; //
-				String manifestation_iri = baseURI + "resources/manifestation/manuscript/" + s_library_place + "/" + s_library + "/" + s_signature + "/" + s_folios; 
-            	Resource r_manifestation = model.createResource(manifestation_iri);
-            	// model.add(r_manifestation, vocabulary.r4_embodies, r_work);
-            	model.add(r_manuscript, vocabulary.r7i_is_materialized_in, r_manifestation);
-            	model.add(r_expression_creation, vocabulary.r18_created, r_manuscript);
-
-            	String manuscript_author_name = manuscript.getAuthor();
-            	Literal l_manuscript_author = model.createTypedLiteral(manuscript_author_name);
-            	Resource _b_manuscript_author = model.createResource();
-            	model.add(_b_manuscript_author, vocabulary.p106i_forms_part_of, r_manuscript);
-            	model.add(_b_manuscript_author, vocabulary.p190_has_symbolic_content, l_manuscript_author);
-
-				// model.add(r_manuscript, vocabulary.p106i_forms_part_of, l_manuscript_author);
-
+				String manuscript_author_name = manuscript.getAuthor();
 				String manuscript_title = manuscript.getTitle();
-            	Literal l_manuscript_title = model.createTypedLiteral(manuscript_title);
-            	Resource _b_manuscript_title = model.createResource();
-            	model.add(r_manuscript, vocabulary.p102_has_title, _b_manuscript_title);
-            	model.add(_b_manuscript_title, vocabulary.p190_has_symbolic_content, l_manuscript_title);
-				// model.add(r_manuscript, vocabulary.p102_has_title, l_manuscript_title);
-
-            	Resource r_library = model.createResource(manuscript.getLibrary().getIri()); // !METTERE UN IRI UNIVOCO!
-				model.add(r_library, RDF.type, vocabulary.library);
-            	model.add(r_manuscript, vocabulary.p50_has_current_keeper, r_library);
-				Resource r_place_library = model.createResource(manuscript.getLibrary().getPlace().getIri());
-				model.add(r_place_library, RDF.type, vocabulary.e53_place);
-            	model.add(r_library, vocabulary.p74_has_current_or_former_residence, r_place_library);
-				// COORDINATE GEOGRAFICHE
-				Literal l_coordinates = model.createTypedLiteral(toWKT(manuscript.getLibrary().getPlace().getLat(), manuscript.getLibrary().getPlace().getLon()));
-				// model.add(resource_Coordinates, RDF.type, vocabulary.e94_space_primitive);
-				model.add(r_place_library, vocabulary.p168_place_is_defined_by, l_coordinates);
-
-				// String signature = manuscript.getSignature();
-            	// String segnatura_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca/segnatura"; // !METTERE UN IRI UNIVOCO!
-				String signature_iri = baseURI + "resources/" + s_library_place + "/" + s_library + "/" + s_signature; 
-				Resource r_signature = model.createResource(signature_iri);
-            	Literal l_signature = model.createTypedLiteral(signature);
-				model.add(r_signature, RDF.type, vocabulary.e42_identifier);
-            	model.add(r_signature, vocabulary.p190_has_symbolic_content, l_signature);
-            	model.add(r_manuscript, vocabulary.p1_is_identified_by, r_signature);
-
-            	Resource r_folios = model.createResource("https://imagoarchive.it/ontology/resources/manuscript/biblioteca/segnatura/fogli"); // !METTERE UN IRI UNIVOCO! IRI NUMERICO
-
-				model.add(r_folios, RDF.type, folios);
-            	// String folios = manuscript.getFolios();
-            	// Resource blankNodeFolio = model.createResource();
-            	Literal l_folios = model.createTypedLiteral(folios);
-            	// model.add(blankNodeFolio, p190_has_symbolic_content, folio);
-            	model.add(r_folios, vocabulary.p1_is_identified_by, l_folios);
-                model.add(r_manuscript, vocabulary.p46_is_composed_of, r_folios);
-
-				//incipit proemio
 				String incipit_dedication = manuscript.getIncipitDedication();
-            	String incipit_dedication_iri = "https://imagoarchive.it/ontology/resources/incipit_dedication/" + s_library_place + "/" + s_library + "/" + s_signature + "/" + s_folios;  // !METTERE UN IRI UNIVOCO NUMERICO!
-				Resource r_incipit_dedication = model.createResource(incipit_dedication_iri);
-            	Literal l_incipit_dedication = model.createTypedLiteral(incipit_dedication);
-				model.add(r_incipit_dedication, RDF.type, vocabulary.e90_symbolic_object);
-            	model.add(r_incipit_dedication, vocabulary.p190_has_symbolic_content, l_incipit_dedication);
-            	model.add(r_incipit_dedication, vocabulary.is_incipit_dedication_of, r_manuscript);
-
-                //explicit proemio
 				String explicit_dedication = manuscript.getExplicitDedication();
-            	String explicit_dedication_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca/explicit"; // !METTERE UN IRI UNIVOCO!
-				Resource r_explicit_dedication = model.createResource(explicit_dedication_iri);
-            	Literal explicitProemioLiteral = model.createTypedLiteral(explicit_dedication);
-				model.add(r_explicit_dedication, RDF.type, vocabulary.e90_symbolic_object);
-            	model.add(r_explicit_dedication, vocabulary.p190_has_symbolic_content, explicitProemioLiteral);
-            	model.add(r_manuscript, vocabulary.is_explicit_dedication_of, r_explicit_dedication);
-
-				//incipit text
-				String incipitTesto = manuscript.getIncipitText();
-            	String incipitTesto_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca/incipit_text"; // !METTERE UN IRI UNIVOCO!
-				Resource resource_Incipit_text = model.createResource(incipitTesto_iri);
-            	Literal incipitTestoLiteral = model.createTypedLiteral(incipitTesto);
-				model.add(resource_Incipit_text, RDF.type, e90_symbolic_object);
-            	model.add(resource_Incipit_text, p190_has_symbolic_content, incipitTestoLiteral);
-            	model.add(resource_Manuscript, is_text_incipit_of, resource_Incipit_text);
-
-                //explicit text
-				String explicitTesto = manoscritto.getExplicitTesto();
-            	String explicitTesto_iri = "https://imagoarchive.it/ontology/resources/manifestation/biblioteca/explicit_text"; // !METTERE UN IRI UNIVOCO!
-				Resource resource_explicit_text = model.createResource(explicitTesto_iri);
-            	Literal explicitTestoLiteral = model.createTypedLiteral(explicitTesto);
-				model.add(resource_explicit_text, RDF.type, e90_symbolic_object);
-            	model.add(resource_explicit_text, p190_has_symbolic_content, explicitTestoLiteral);
-            	model.add(resource_Manuscript, is_text_explicit_of, resource_explicit_text);
-
-
-
-				// DATE
-				String date_manuscript = manuscript.getDate().getStartDate() + "-" + manuscript.getDate().getEndDate();
-				Resource r_date_manuscript =  model.createResource(baseURI + date_manuscript);
-				Literal l_date_manuscript =  model.createLiteral(date_manuscript);
-				// model.add(resource_dateManuscript, RDF.type, e52_time_span);
-				Resource manifestation_creation = model.createResource("iri manifestation creation"); //IRI NUMERICO
-				model.add(manifestation_creation, RDF.type, vocabulary.f30_manifestation_creation);
-				model.add(manifestation_creation, vocabulary.r24_created, r_manuscript);
-
-				model.add(manifestation_creation, vocabulary.p4_has_time_span, r_date_manuscript);
-				model.add(r_date_manuscript, vocabulary.p170i_time_is_defined_by, l_date_manuscript);
-
+				String incipit_text = manuscript.getIncipitText();
+				String explicit_text = manuscript.getExplicitText();
+				String date_manuscript = manuscript.getStringDatazione();
 				String sources = "";
 				for(Source source : manuscript.getSources()) {
 					sources += source.getAbbreviation() + ", <a href='" + source.getIri() + "'>" + source.getName() + "</a>, " + source.getPages() + " <br />";
 				}
 
-				model.add(r_manuscript, vocabulary.has_secondary_sources, sources);
+				
+				// Parse the strings to make IRIs
+				String s_library = library.replaceAll(" ", "_").toLowerCase();
+				String s_library_place = library_place.replaceAll(" ", "_").toLowerCase();
+				String s_signature = signature.replaceAll(" ", "_").toLowerCase();
+				String s_folios = library.replaceAll(" ", "_").toLowerCase();
+
+
+				// Define all the iris
+				String manuscript_iri = baseURI + "resources/manuscript/" + s_library_place + "/" + s_library + "/" + s_signature + "/" + s_folios;
+				String manifestation_iri = baseURI + "resources/manifestation/manuscript/m-" + m_count;
+				String manifestation_creation_iri = baseURI + "resources/manifestation_creation/m-" + m_count;
+				String signature_iri = baseURI + "resources/signature/m-" + m_count;
+				String folios_iri = baseURI + "resources/folios/m-" + m_count;
+				String incipit_dedication_iri = baseURI + "resources/incipit_dedication/m-" + m_count;
+				String explicit_dedication_iri = baseURI + "resources/explicit_dedication/m-" + m_count;
+				String incipit_text_iri =  baseURI + "resources/incipit_text/m-" + m_count;
+				String explicit_text_iri =  baseURI + "resources/explicit_text/m-" + m_count;
+				String date_manuscript_iri = baseURI + "resurces/manuscript/date/m-" + m_count;
+
+				// Create all the resources
+				Resource r_manuscript = model.createResource(manuscript_iri);
+            	Resource r_manifestation = model.createResource(manifestation_iri);
+				Resource r_library = model.createResource(manuscript.getLibrary().getIri());
+				Resource r_place_library = model.createResource(manuscript.getLibrary().getPlace().getIri());
+				Resource r_signature = model.createResource(signature_iri);
+				Resource r_folios = model.createResource(folios_iri);
+				Resource r_incipit_dedication = model.createResource(incipit_dedication_iri);
+            	Resource r_explicit_dedication = model.createResource(explicit_dedication_iri);
+				Resource r_incipit_text = model.createResource(incipit_text_iri);
+				Resource r_explicit_text = model.createResource(explicit_text_iri);
+				Resource r_date_manuscript =  model.createResource(date_manuscript_iri);
+				Resource r_manifestation_creation = model.createResource(manifestation_creation_iri); 
+
+            	
+				// Create all literals
+				Literal l_manuscript_author = model.createTypedLiteral(manuscript_author_name);
+				Literal l_manuscript_title = model.createTypedLiteral(manuscript_title);
+				Literal l_coordinates = model.createTypedLiteral(toWKT(manuscript.getLibrary().getPlace().getLat(), manuscript.getLibrary().getPlace().getLon()));
+				Literal l_signature = model.createTypedLiteral(signature);
+				Literal l_folios = model.createTypedLiteral(folios);
+				Literal l_incipit_dedication = model.createTypedLiteral(incipit_dedication);
+				Literal explicitProemioLiteral = model.createTypedLiteral(explicit_dedication);
+				Literal l_incipit_text = model.createTypedLiteral(incipit_text);
+				Literal l_explicit_text = model.createTypedLiteral(explicit_text);
+				Literal l_date_manuscript =  model.createTypedLiteral(date_manuscript);
+				Literal l_sources = model.createTypedLiteral(sources);
+
+
+				// Create all blank nodes
+				Resource _b_manuscript_author = model.createResource();
+				Resource _b_manuscript_title = model.createResource();
+				Resource _b_folios = model.createResource();
+
+
+				// Declare all the statements rdf:type
+				model.add(r_manuscript, RDF.type, vocabulary.manuscript);
+				model.add(r_library, RDF.type, vocabulary.library);
+				model.add(r_place_library, RDF.type, vocabulary.e53_place);
+				model.add(r_signature, RDF.type, vocabulary.e42_identifier);
+				model.add(r_folios, RDF.type, folios);
+				model.add(r_incipit_dedication, RDF.type, vocabulary.e90_symbolic_object);
+				model.add(r_explicit_dedication, RDF.type, vocabulary.e90_symbolic_object);
+				model.add(r_incipit_text, RDF.type, vocabulary.e90_symbolic_object);
+				model.add(r_explicit_text, RDF.type, vocabulary.e90_symbolic_object);
+				model.add(r_manifestation_creation, RDF.type, vocabulary.f30_manifestation_creation);
+				model.add(r_date_manuscript, RDF.type, vocabulary.e52_time_span);
+
+				// Declare all the triples
+				model.add(r_manuscript, vocabulary.r7i_is_materialized_in, r_manifestation);
+            	model.add(r_expression_creation, vocabulary.r18_created, r_manuscript);
+
+				model.add(_b_manuscript_author, vocabulary.p106i_forms_part_of, r_manuscript);
+            	model.add(_b_manuscript_author, vocabulary.p190_has_symbolic_content, l_manuscript_author);
+				model.add(r_manuscript, vocabulary.p102_has_title, _b_manuscript_title);
+            	model.add(_b_manuscript_title, vocabulary.p190_has_symbolic_content, l_manuscript_title);
+				model.add(r_manuscript, vocabulary.p50_has_current_keeper, r_library);
+            	model.add(r_library, vocabulary.p74_has_current_or_former_residence, r_place_library);
+				model.add(r_place_library, vocabulary.p168_place_is_defined_by, l_coordinates);
+				model.add(r_signature, vocabulary.p190_has_symbolic_content, l_signature);
+            	model.add(r_manuscript, vocabulary.p1_is_identified_by, r_signature);
+				model.add(r_folios, vocabulary.p1_is_identified_by, _b_folios);
+                model.add(r_manuscript, vocabulary.p46_is_composed_of, r_folios);
+				model.add(_b_folios, vocabulary.p190_has_symbolic_content, l_folios);
+
+				// incipit dedication	
+            	model.add(r_incipit_dedication, vocabulary.p190_has_symbolic_content, l_incipit_dedication);
+            	model.add(r_manifestation, vocabulary.is_incipit_dedication_of, r_incipit_dedication);
+
+                //explicit proemio
+            	model.add(r_explicit_dedication, vocabulary.p190_has_symbolic_content, explicitProemioLiteral);
+            	model.add(r_manifestation, vocabulary.is_explicit_dedication_of, r_explicit_dedication);
+
+				//incipit text
+            	model.add(r_incipit_text, vocabulary.p190_has_symbolic_content, l_incipit_text);
+            	model.add(r_manifestation, vocabulary.is_text_incipit_of, r_incipit_text);
+
+                //explicit text
+            	model.add(r_explicit_text, vocabulary.p190_has_symbolic_content, l_explicit_text);
+            	model.add(r_manifestation, vocabulary.is_text_explicit_of, r_explicit_text);
+
+				
+				model.add(r_manifestation_creation, vocabulary.r24_created, r_manifestation);
+				model.add(r_manuscript, vocabulary.r7i_is_materialized_in, r_manifestation);
+
+				model.add(r_manifestation_creation, vocabulary.p4_has_time_span, r_date_manuscript);
+				model.add(r_date_manuscript, vocabulary.p170i_time_is_defined_by, l_date_manuscript);
+
+				model.add(r_manuscript, vocabulary.has_secondary_sources, l_sources);
+
+            	
+				// TO-DO 
+
+				// -[ ] Link al manoscritto
+				// -[ ] Link alla descrizione del manoscritto
+				// -[ ] Decorazione / apparato iconografico
+				// -[ ] Altre eventuali notizie (notes)
+
+
+				m_count++;
 
             }
 			for(PrintEdition print_edition: e.getLemma().getPrintEditions()) {
-				String print_edition_iri = "https://imagoarchive.it/ontology/resources/printEdition"; // !METTERE UN ID!
+
+				// Get the strings from json
+				String edition = print_edition.getEdition();
+				String ecdotic = print_edition.getEcdotic();
+				String sources = "";
+				for(Source source : print_edition.getSources()) {
+					sources += source.getAbbreviation() + ", <a href='" + source.getIri() + "'>" + source.getName() + "</a>, " + source.getPages() + " <br />";
+				}
+
+				// Parse the strings to make IRIs
+				String s_edition = edition.replaceAll(" ", "_").toLowerCase();
+				String s_ecdotic = ecdotic.replaceAll(" ", "_").toLowerCase();
+
+				// Define all the iris
+				String print_edition_iri = baseURI + "resources/print_edition/p-" + p_count; 
+				String print_edition_creation_iri = baseURI + "resources/manifestation_creation/p-" + p_count; 
+				String curator_iri = baseURI + "resources/print_edition/curator/p-" + p_count;
+				String date_print_edition_iri = baseURI + "resurces/print_edition/date/m-" + p_count;
+				String publisher_iri = baseURI + "resources/print_edition/publisher/p-" + p_count;
+				String format_iri = baseURI + "resources/print_edition/format/p-" + p_count;
+				String pages_iri = baseURI + "resources/print_edition/pages/p-" + p_count;
+				String edition_iri = baseURI + "resources/print_edition/edition/" + s_edition;
+				String ecdotic_iri = baseURI + "resources/print_edition/edition/" + s_ecdotic;
+
+				// Create all the resources
 				Resource r_print_edition = model.createResource(print_edition_iri);
-            	// Non importa dire che � di tipo f5_item, basta dire che � di tipo manuscript che � sottoclasse di item
-            	// model.add(resource_Manuscript, RDF.type, f5_item);
-				Resource r_print_edition_creation = model.createResource("iriCreazioneEdizioneStampa");
-				model.add(r_print_edition_creation, RDF.type, vocabulary.f30_manifestation_creation);
-				
-            	model.add(r_print_edition, RDF.type, vocabulary.print_edition);
-				model.add(r_print_edition, vocabulary.r4_embodies, r_work);
-				model.add(r_print_edition_creation, vocabulary.r24_created, r_print_edition);
-				Literal l_author_print_edition = model.createTypedLiteral(print_edition.getAuthor());
-				model.add(r_print_edition, vocabulary.p106_is_composed_of, l_author_print_edition);
-
-            	// Resource blankNodeAppellationAuthorPE = model.createResource();
-            	// model.add(blankNodeAppellationAuthorPE, p106i_forms_part_of, resource_PrintEdition);
-            	// model.add(blankNodeAppellationAuthorPE, p190_has_symbolic_content, authorNamePrintEdition);
-
-            	Literal l_title_print_edition = model.createTypedLiteral(print_edition.getTitle());
-            	// Resource blankNodeTitlePrintEdition = model.createResource();
-            	model.add(r_print_edition, vocabulary.p102_has_title, l_title_print_edition);
-
-				Resource r_curator = model.createResource("iri" + print_edition.getCurator());
-				model.add(r_curator, RDF.type, vocabulary.curator);
-				model.add(r_print_edition_creation, vocabulary.has_curator, r_curator);
-				Literal l_curator = model.createTypedLiteral(print_edition.getCurator());
-				// Resource blankNodeAppellationCuratore = model.createResource();
-				model.add(r_curator, vocabulary.p1_is_identified_by, l_curator);
-
+				Resource r_print_edition_creation = model.createResource(print_edition_creation_iri);
+				Resource r_curator = model.createResource(curator_iri);
 				Resource r_place_print_edition = model.createResource(print_edition.getPlace().getIri());
+				Resource r_date_print_edition =  model.createResource(date_print_edition_iri);
+				Resource r_publisher = model.createResource(publisher_iri);
+				Resource r_format = model.createResource(format_iri);
+				Resource r_pages = model.createResource(pages_iri);
+				Resource r_edition = model.createResource(edition_iri);
+				Resource r_ecdotic = model.createResource(ecdotic_iri);
+
+				// Create all literals
+				Literal l_author_print_edition = model.createTypedLiteral(print_edition.getAuthor());
+				Literal l_title_print_edition = model.createTypedLiteral(print_edition.getTitle());
+				Literal l_curator = model.createTypedLiteral(print_edition.getCurator());
+				Literal l_place_name_as_appear = model.createTypedLiteral(print_edition.getPlaceAsAppear());
+				Literal l_coordinates = model.createTypedLiteral(toWKT(print_edition.getPlace().getLat(), print_edition.getPlace().getLon()));
+				Literal l_date_print_edition = model.createTypedLiteral(print_edition.getStringDatazione());
+				Literal l_publisher = model.createTypedLiteral( print_edition.getEditor());
+				Literal l_format = model.createTypedLiteral(print_edition.getFormat());
+				Literal l_pages = model.createTypedLiteral(print_edition.getPages());
+				Literal l_figure = model.createTypedLiteral(print_edition.getFigures());
+				Literal l_notes = model.createTypedLiteral(print_edition.getNotes());
+				Literal l_prefatore = model.createTypedLiteral(print_edition.getPrefator());
+				Literal l_edition = model.createTypedLiteral(print_edition.getEdition());
+				Literal l_date_edition = model.createTypedLiteral(print_edition.getDateEdition());
+				Literal l_primary_sources = model.createTypedLiteral(print_edition.getPrimarySources());
+				Literal l_ecdotic = model.createTypedLiteral(ecdotic);
+				Literal l_sources = model.createTypedLiteral(sources);
+				
+
+				// Create all blank nodes
+				Resource _b_print_edition_author = model.createResource();
+				Resource _b_print_edition_title = model.createResource();
+				Resource _b_folios = model.createResource();
+				Resource _b_curator = model.createResource();
+				Resource _b_publisher = model.createResource();
+				Resource _b_format = model.createResource();
+				Resource _b_pages = model.createResource();
+
+				
+				// Declare all the statements rdf:type
+				model.add(r_print_edition_creation, RDF.type, vocabulary.f30_manifestation_creation);
+				model.add(r_print_edition, RDF.type, vocabulary.print_edition);
+				model.add(r_curator, RDF.type, vocabulary.curator);
 				model.add(r_place_print_edition, RDF.type, vocabulary.e53_place);
+				model.add(r_date_print_edition, RDF.type, vocabulary.e52_time_span);
+				model.add(r_publisher, RDF.type, vocabulary.publisher);
+				model.add(r_format, RDF.type, vocabulary.format);
+				model.add(r_pages, RDF.type, vocabulary.e90_symbolic_object);
+				model.add(r_edition, RDF.type, vocabulary.edition);
+				model.add(r_ecdotic, RDF.type, vocabulary.ecdotic_typology);
+
+				// Declare all the triples
+				model.add(r_print_edition, vocabulary.r4_embodies, r_work);
+				model.add(r_print_edition_creation, vocabulary.r24_created, r_print_edition);	
+				model.add(r_print_edition, vocabulary.p106_is_composed_of, _b_print_edition_author);
+				model.add(_b_print_edition_author, vocabulary.p190_has_symbolic_content, l_author_print_edition);
+            	model.add(r_print_edition, vocabulary.p102_has_title, _b_print_edition_title);
+            	model.add(_b_print_edition_title, vocabulary.p190_has_symbolic_content, l_title_print_edition);
+				model.add(r_print_edition_creation, vocabulary.has_curator, r_curator);
+				model.add(r_curator, vocabulary.p1_is_identified_by, _b_curator);
+				model.add(_b_curator, vocabulary.p190_has_symbolic_content, l_curator);
 				model.add(r_print_edition_creation, vocabulary.p7_took_place_at, r_place_print_edition);
-				// Resource resource_Toponym = model.createResource();
-				// model.add(resource_Toponym, RDF.type, toponym);
-				// model.add(risorsa_place_pe, is_identified_by_toponym, resource_Toponym);
+				model.add(r_print_edition, vocabulary.is_composed_of_place_name, l_place_name_as_appear);
+				model.add(r_place_print_edition, vocabulary.p168_place_is_defined_by, l_coordinates);
+				model.add(r_print_edition_creation, vocabulary.p4_has_time_span, r_date_print_edition);
+				model.add(r_date_print_edition, vocabulary.p170i_time_is_defined_by, l_date_print_edition);
+				model.add(r_print_edition_creation, vocabulary.has_publisher, r_publisher);
+				model.add(r_publisher, vocabulary.p1_is_identified_by, _b_publisher);
+				model.add(_b_publisher, vocabulary.p190_has_symbolic_content, l_publisher);
+				model.add(r_print_edition, vocabulary.r69_specifies_phisical_form, r_format);
+				model.add(r_format, vocabulary.p1_is_identified_by, _b_format);
+				model.add(_b_format, vocabulary.p190_has_symbolic_content, l_format);
+				model.add(r_print_edition, vocabulary.p106_is_composed_of, r_pages);
+				model.add(r_pages, vocabulary.p1_is_identified_by, _b_pages);
+				model.add(_b_pages, vocabulary.p1_is_identified_by, l_pages);
+				model.add(r_print_edition, vocabulary.has_figure_note, l_figure);
+				model.add(r_print_edition, vocabulary.p3_has_note, l_notes);
+				model.add(r_print_edition, vocabulary.has_introduction_note, l_prefatore);
+				model.add(r_print_edition, vocabulary.p2_has_type, r_edition);
+				model.add(r_edition, vocabulary.p190_has_symbolic_content, l_edition);
+				if(print_edition.getDateEdition()!=""){
+					model.add(r_print_edition, vocabulary.has_reprint_date, l_date_edition);
+				}
+				model.add(r_print_edition, vocabulary.has_primary_source, l_primary_sources);
+				model.add(r_print_edition, vocabulary.p2_has_type, r_ecdotic);
+				model.add(r_ecdotic, vocabulary.p190_has_symbolic_content, l_ecdotic);
+				model.add(r_print_edition, vocabulary.has_secondary_sources, l_sources);
 
-				String r_place_name_as_appear = print_edition.getPlaceAsAppear();
-				// Literal literalToponymName = model.createTypedLiteral(toponymName);
-				model.add(r_print_edition, vocabulary.is_composed_of_place_name, r_place_name_as_appear);
-
-
-      	String lat = edizioneStampa.getLuogo().getLat();
-      	String lon = edizioneStampa.getLuogo().getLon();
-      	Literal coordinates = model.createTypedLiteral("(" + lat + "," + lon + ")");
-      	model.add(e94_space_primitive, p190_has_symbolic_content, coordinates);
-      	model.add(risorsa_place_pe, vocabulary.p168_place_is_defined_by, coordinates);
-
-        String dateEdizioneStampa = print_edition.getDatazione().getDataInizio() + "-" + edizioneStampa.getDatazione().getDataFine();
-				Resource resource_dateEdizioneStampa =  model.createResource(dateEdizioneStampa);
-				model.add(resource_dateEdizioneStampa, RDF.type, vocabulary.e52_time_span);
-        model.add(r_print_edition_creation, vocabulary.p4_has_time_span, resource_dateEdizioneStampa);
-
-        String publisher = print_edition.getEditor();
-        Literal literal_publisher = model.createTypedLiteral(publisher);
-        Resource resource_publisher = model.createResource("iriPublisher");
-        model.add(resource_publisher, RDF.type, vocabulary.publisher);
-        model.add(r_print_edition_creation, vocabulary.has_publisher, resource_publisher);
-        // Resource blankNodePublisher = model.createResource();
-        model.add(resource_publisher, vocabulary.p1_is_identified_by, curatorNamePrintEdition);
-		// 		model.add(blankNodePublisher, vocabulary.p190_has_symbolic_content, curatorNamePrintEdition);
-
-        String format = print_edition.getFormat();
-        Resource resource_format = model.createResource("iriFormat");
-        model.add(resource_format, RDF.type, vocabulary.format);
-        Literal literal_format = model.createTypedLiteral(format);
-        model.add(resource_PrintEdition, vocabulary.r69_specifies_phisical_form, resource_format);
-        model.add(resource_format, vocabulary.p1_is_identified_by, literal_format);
-
-
-        String pages = print_edition.getPages();
-        Resource resource_pages = model.createResource("iriPages");
-        model.add(resource_pages, RDF.type, vocabulary.e90_symbolic_object);
-        Literal literal_pages = model.createTypedLiteral(pages);
-        model.add(resource_PrintEdition, vocabulary.p106_is_composed_of, resource_pages);
-        model.add(resource_pages, vocabulary.p1_is_identified_by, literal_pages);
-
-        String figures = print_edition.getFigures();
-        Literal literal_has_figure = model.createTypedLiteral(figures);
-        model.add(resource_PrintEdition, vocabulary.has_figure_note, literal_has_figure);
-
-        String notes = print_edition.getNotes();
-        Literal literal_notes = model.createTypedLiteral(notes);
-        model.add(resource_PrintEdition, vocabulary.p3_has_note, literal_notes);
-
-        String prefatore = print_edition.getPrefator();
-        Literal literal_prefatore = model.createTypedLiteral(prefatore);
-        model.add(resource_PrintEdition, vocabulary.has_introduction_note, literal_prefatore);
-
-        String edition_reprint = print_edition.getEdizione();
-        Literal literal_edition_reprint = model.createTcreateTypedLiteral(edition_reprint);
-        Resource resource_edition = model.createResource("iriEdition");
-        model.add(resource_edition, RDF.type, vocabulary.edition);
-        model.add(resource_PrintEdition, vocabulary.p2_has_type, resource_edition);
-        model.add(resource_edition, vocabulary.p190_has_symbolic_content, literal_edition_reprint);
-
-		String reprint_date = print_edition.getDateEdition();
-		model.add(r_print_edition, vocabulary.has_reprint_date, reprint_date);
-
-        String primary_sources = print_edition.getPrimarySources();
-        Literal literal_primary_sources = model.createTcreateTypedLiteral(primary_sources);
-        Resource resource_primary_sources = model.createResource("iriEdition");
-        model.add(resource_primary_sources, RDF.type, vocabulary.primary_sources);
-        model.add(resource_PrintEdition, vocabulary.p67_refers_to, resource_primary_sources);
-        model.add(resource_primary_sources, vocabulary.p190_has_symbolic_content, literal_primary_sources);
-
-        String ecdotic_typology = edizioneStampa.getEcdotica();
-        Literal literal_ecdotic_typology = model.createTcreateTypedLiteral(ecdotic_typology);
-        Resource resource_ecdotic_typology = model.createResource("iriEdition");
-        model.add(resource_ecdotic_typology, RDF.type, vocabulary.ecdotic_typology);
-        model.add(resource_PrintEdition, vocabulary.p2_has_type, resource_ecdotic_typology);
-        model.add(resource_ecdotic_typology, vocabulary.p190_has_symbolic_content, literal_ecdotic_typology);
-
-        String sources = "";
-		for(Source source : print_edition.getSources()) {
-			sources += source.getAbbreviation() + ", <a href='" + source.getIri() + "'>" + source.getName() + "</a>, " + source.getPages() + " <br />";
-		}
-
-		model.add(r_print_edition, vocabulary.has_secondary_sources, sources);
-
-
+				p_count++;
 
 			}
 
@@ -429,32 +429,5 @@ public class ModelImago {
 		return model;
 	}
 
-	public static void main(String[] args) throws IOException {
-	OntModel onto = ModelFactory.createOntologyModel(
-	        OntModelSpec.OWL_DL_MEM, null );
-	onto.read("https://imagoarchive.it/onto/2021_07_27_IMAGO_Ontology.owl");
-//    ExtendedIterator iter = onto.listNamedClasses();
-//while(iter.hasNext()) {
-//  OntClass ontoClass = (OntClass) iter.next();
-//  System.out.println(ontoClass.getLocalName());
-//}
-/* Then you can acces the information using the OntModel methods
-Let's access the ontology properties */
-System.out.println("Listing the properties");
-onto.listOntProperties().forEachRemaining(System.out::println);
-// let's access the classes local names and their subclasses
-try {
-            onto.listNamedClasses().toSet().forEach(c -> {
-            	System.out.println("-----------------------");
-                System.out.println(c.getLocalName());
-                System.out.println("-----------------------");
-                System.out.println(c.listDeclaredProperties().toList());
-                System.out.println("Listing subclasses of " + c.getLocalName());
-                c.listSubClasses().forEachRemaining(System.out::println);
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-   }
 
-}
 }

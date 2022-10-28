@@ -51,10 +51,17 @@ public class Vocabulary {
   public Resource print_edition;
   public Resource author;
   public Resource library;
+  public Resource publisher;
+  public Resource format;
+  public Resource edition;
+  public Resource ecdotic_typology;
 
   // Properties eCRM
   public Property p1_is_identified_by;
   public Property p2_has_type;
+  public Property p3_has_note;
+  public Property p4_has_time_span;
+  public Property p7_took_place_at;
   public Property p14_carried_out_by;
   public Property p46_is_composed_of;
   public Property p50_has_current_keeper;
@@ -64,6 +71,7 @@ public class Vocabulary {
   public Property p106_is_composed_of;
   public Property p106i_forms_part_of;
   public Property p168_place_is_defined_by;
+  public Property p170i_time_is_defined_by;
   public Property p190_has_symbolic_content;
 
   // Properties eFRBRoo
@@ -72,17 +80,27 @@ public class Vocabulary {
   public Property r15_has_fragment;
   public Property r17_created;
   public Property r18_created;
+  public Property r24_created;
+  public Property r69_specifies_phisical_form;
 
   // Properties imago
+  public Property has_curator;
   public Property has_genre;
   public Property has_genre_name;
   public Property has_textual_place;
   public Property has_vdl_explanation;
+  public Property has_primary_source;
+  public Property has_secondary_sources;
+  public Property has_publisher;
+  public Property has_figure_note;
+  public Property has_introduction_note;
+  public Property has_reprint_date;
   public Property is_identified_by_toponym;
   public Property is_incipit_dedication_of;
   public Property is_explicit_dedication_of;
   public Property is_text_incipit_of;
   public Property is_text_explicit_of;
+  public Property is_composed_of_place_name;
 
 
   public Vocabulary(Model model){
@@ -115,10 +133,17 @@ public class Vocabulary {
     this.print_edition = model.getResource(Vocabulary.imago + "PrintEdition");
     this.author = model.getResource(Vocabulary.imago + "Author");
     this.library = model.getResource(Vocabulary.imago + "Library");
+    this.publisher = model.getResource(Vocabulary.imago + "Publisher");
+    this.format = model.getResource(Vocabulary.imago + "Format");
+    this.edition = model.getResource(Vocabulary.imago + "Edition");
+    this.ecdotic_typology = model.getResource(Vocabulary.imago + "EcdoticTypology");
 
     // Properties eCRM
     this.p1_is_identified_by = model.getProperty(Vocabulary.ecrm + "P1_is_identified_by");
     this.p2_has_type = model.getProperty(Vocabulary.ecrm + "P2_has_type");
+    this.p3_has_note = model.getProperty(Vocabulary.ecrm + "P3_has_note");
+    this.p4_has_time_span = model.getProperty(Vocabulary.ecrm + "P4_has_time_span");
+    this.p7_took_place_at = model.getProperty(Vocabulary.ecrm + "P7_took_place_at");
     this.p14_carried_out_by = model.getProperty(Vocabulary.ecrm + "P14_carried_out_by");
     this.p46_is_composed_of = model.getProperty(Vocabulary.ecrm + "P46_is_composed_of");
     this.p50_has_current_keeper = model.getProperty(Vocabulary.ecrm + "P50_has_current_keeper");
@@ -128,6 +153,7 @@ public class Vocabulary {
     this.p106_is_composed_of = model.getProperty(Vocabulary.ecrm + "P106_is_composed_of");
     this.p106i_forms_part_of = model.getProperty(Vocabulary.ecrm + "P106i_forms_part_of");
     this.p168_place_is_defined_by = model.getProperty(Vocabulary.ecrm + "P168_place_is_defined_by");
+    this.p170i_time_is_defined_by = model.getProperty(Vocabulary.ecrm + "P170i_time_is_defined_by");
     this.p190_has_symbolic_content = model.getProperty(Vocabulary.ecrm + "P190_has_symbolic_content");
 
     // Properties eFRBRoo
@@ -137,17 +163,27 @@ public class Vocabulary {
     this.r15_has_fragment = model.getProperty(Vocabulary.ilrmoo + "R15_has_fragment");
     this.r17_created = model.getProperty(Vocabulary.ilrmoo + "R17_created");
     this.r18_created = model.getProperty(Vocabulary.ilrmoo + "R18_created");
+    this.r24_created = model.getProperty(Vocabulary.ilrmoo + "R24_created");
+    this.r69_specifies_phisical_form = model.getProperty(Vocabulary.ilrmoo + "R69_specifies_phisical_form");
 
     // Properties imago
+    this.has_curator = model.getProperty(Vocabulary.imago + "has_curator");
     this.has_genre = model.getProperty(Vocabulary.imago + "has_genre");
     this.has_genre_name = model.getProperty(Vocabulary.imago + "has_genre_name");
     this.has_textual_place = model.getProperty(Vocabulary.imago + "has_textual_place");
     this.has_vdl_explanation = model.getProperty(Vocabulary.imago + "has_vdl_explanation");
+    this.has_primary_source = model.getProperty(Vocabulary.imago + "has_primary_source");
+    this.has_secondary_sources = model.getProperty(Vocabulary.imago + "has_secondary_sources");
+    this.has_publisher = model.getProperty(Vocabulary.imago + "has_publisher");
+    this.has_figure_note = model.getProperty(Vocabulary.imago + "has_figure_note");
+    this.has_introduction_note = model.getProperty(Vocabulary.imago + "has_introduction_note");
+    this.has_reprint_date = model.getProperty(Vocabulary.imago + "has_reprint_date");
     this.is_identified_by_toponym = model.getProperty(Vocabulary.imago + "is_identified_by_toponym");
     this.is_incipit_dedication_of = model.getProperty(Vocabulary.imago + "is_incipit_dedication_of");
     this.is_explicit_dedication_of = model.getProperty(Vocabulary.imago + "is_explicit_dedication_of");
     this.is_text_incipit_of = model.getProperty(Vocabulary.imago + "is_text_incipit_of");
     this.is_text_explicit_of = model.getProperty(Vocabulary.imago + "is_text_explicit_of");
+    this.is_composed_of_place_name = model.getProperty(Vocabulary.imago + "is_composed_of_place_name");
 
   }
 

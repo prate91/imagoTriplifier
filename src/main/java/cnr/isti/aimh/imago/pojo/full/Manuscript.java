@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "title",
     "lastMod",
     "date",
+    "stringDatazione",
     "signature",
     "library",
     "annotator",
@@ -51,6 +52,8 @@ public class Manuscript {
     private Float lastMod;
     @JsonProperty("date")
     private Date date;
+    @JsonProperty("stringDatazione")
+    private String stringDatazione;
     @JsonProperty("signature")
     private String signature;
     @JsonProperty("library")
@@ -150,6 +153,16 @@ public class Manuscript {
     @JsonProperty("date")
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    @JsonProperty("stringDatazione")
+    public String getStringDatazione() {
+        return stringDatazione;
+    }
+
+    @JsonProperty("stringDatazione")
+    public void setStringDatazione(String stringDatazione) {
+        this.stringDatazione = stringDatazione;
     }
 
     @JsonProperty("signature")
