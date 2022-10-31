@@ -4,3 +4,6 @@ config.properties
 #exclude json
 *no.json
 
+#exlude sparql
+*.rq
+

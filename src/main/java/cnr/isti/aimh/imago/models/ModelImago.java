@@ -1,5 +1,6 @@
 package cnr.isti.aimh.imago.models;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.jena.ontology.OntModel;
@@ -22,6 +23,7 @@ public class ModelImago {
 
 	// Base URI of the IMAGO ontology
 	private static String baseURI = "https://www.imagoarchive.it/ontology/";
+	private static HashMap<String, Resource> blank_author = new HashMap<String, Resource>();
 
 
 	/**
@@ -116,7 +118,16 @@ public class ModelImago {
 			model.add(r_expression_creation, vocabulary.p14_carried_out_by, r_author);
 			model.add(r_expression_creation, vocabulary.r17_created, r_work);
 
-			Resource _b_author = model.createResource();			
+			Resource _b_author = null;
+			if(!blank_author.containsKey(lemma.getAuthor().getIri())){
+				_b_author = model.createResource();
+				blank_author.put(lemma.getAuthor().getIri(), _b_author);
+
+			}else{
+				_b_author = blank_author.get(lemma.getAuthor().getIri());
+			}
+			
+
 			model.add(r_author, vocabulary.p1_is_identified_by, _b_author);
 			model.add(_b_author, vocabulary.p190_has_symbolic_content, l_italian_author_name);
 			// Forse si può fare più semplicemente
