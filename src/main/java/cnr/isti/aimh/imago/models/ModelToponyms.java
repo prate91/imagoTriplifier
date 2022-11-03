@@ -131,13 +131,22 @@ public class ModelToponyms {
 			}
 			resource_Work = model.createResource(e.getWork().getIri());
 			resource_Place = model.createResource(e.getIriWD());
-			resource_Coordinates = model.createResource(baseURI + e.getLatitude() + "," + e.getLongitude());
-			Literal l_coordinates = model.createLiteral("POINT(" + e.getLatitude() + " " + e.getLongitude() +")");
+			// resource_Coordinates = model.createResource(baseURI + e.getLatitude() + "," + e.getLongitude());
+			Literal l_coordinates = model.createLiteral("POINT(" + e.getLongitude() + " " + e.getLatitude() +")");
 			resource_Fragment = model.createResource(fragmentURI);
 			literal_Context =  model.createTypedLiteral(e.getContext());
 			literal_TexualPlace = model.createTypedLiteral(e.getPlaceText());
 			literal_VDL = model.createTypedLiteral(e.getVDLlemma());
-			resource_Pleiades = model.createResource(e.getPleiades());
+
+			
+			if(e.getPleiades()!=null){
+				resource_Pleiades = model.createResource(e.getPleiades());
+				model.add(resource_Pleiades, RDF.type, vocabulary.e53_place);
+				if(e.getIriWD()!=null){
+					model.add(resource_Place, OWL.sameAs, resource_Pleiades);
+					}
+			}
+			
 
 			resource_Toponym.addProperty(RDFS.label, literal_Toponym);
 			if(e.getLabelIta()!="") {
@@ -151,13 +160,11 @@ public class ModelToponyms {
 			model.add(resource_Toponym, RDF.type, vocabulary.toponym);
 			model.add(resource_Work, RDF.type, vocabulary.f2_expression);
 			model.add(resource_Place, RDF.type, vocabulary.e53_place);
-			model.add(resource_Pleiades, RDF.type, vocabulary.e53_place);
+			
 			// model.add(resource_Coordinates, RDF.type, vocabulary.e94_space_primitive);
 			model.add(resource_Fragment, RDF.type, vocabulary.e90_symbolic_object);
 			// if(resource_Place){}
-			if(e.getIriWD()!=null){
-			model.add(resource_Place, OWL.sameAs, resource_Pleiades);
-			}
+
 
 			// if(places.get(e.getIriWD())!=null){
 			// 	// System.out.println(e.getIriWD());
