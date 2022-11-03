@@ -308,8 +308,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q6088",
       "latitude":"44.913331",
       "longitude":"8.62",
-      "VDLlemma":"",
-      "iri_pleiades":""
+      "VDLlemma":""
    },
    {
       "name":"Alpes",
@@ -878,8 +877,8 @@
       "placeText":"De vulg. I vi 5",
       "position":"1",
       "iriWD":"https://www.wikidata.org/entity/Q5684",
-      "latitude":"32.541781",
-      "longitude":"44.431644",
+      "latitude":"32.541780555",
+      "longitude":"44.431644444",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/893951"
    },
@@ -904,8 +903,8 @@
       "placeText":"De vulg. I vii 4",
       "position":"2",
       "iriWD":"https://www.wikidata.org/entity/Q5684",
-      "latitude":32.541781,
-      "longitude":44.431644,
+      "latitude":"32.541780555",
+      "longitude":"44.431644444",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/893951"
    },
@@ -930,8 +929,8 @@
       "placeText":"De vulg. I ix 2",
       "position":"3",
       "iriWD":"https://www.wikidata.org/entity/Q5684",
-      "latitude":32.541781,
-      "longitude":44.431644,
+      "latitude":"32.541780555",
+      "longitude":"44.431644444",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/893951"
    },
@@ -4585,8 +4584,8 @@
       "placeText":"De vulg. I vii 4",
       "position":"1",
       "iriWD": "https://www.wikidata.org/entity/Q5684",
-      "latitude": "32.541780555",
-      "longitude": "44.431644444",
+      "latitude":"32.541780555",
+      "longitude":"44.431644444",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/893951"
    },
@@ -4640,7 +4639,7 @@
       "latitude":"37.599958333",
       "longitude":"14.015377777",
       "VDLlemma":"",
-      "iri_pleiades":"https://pleiades.stoa.org/places/981549"
+      "iri_pleiades":"https://pleiades.stoa.org/places/462492"
    },
    {
       "name":"Sicilia",
@@ -4666,7 +4665,7 @@
       "latitude":"37.599958333",
       "longitude":"14.015377777",
       "VDLlemma":"",
-      "iri_pleiades":"https://pleiades.stoa.org/places/981549"
+      "iri_pleiades":"https://pleiades.stoa.org/places/462492"
    },
    {
       "name":"Sicilia",
@@ -4692,7 +4691,7 @@
       "latitude":"37.599958333",
       "longitude":"14.015377777",
       "VDLlemma":"",
-      "iri_pleiades":"https://pleiades.stoa.org/places/981549"
+      "iri_pleiades":"https://pleiades.stoa.org/places/462492"
    },
    {
       "name":"Spoletum",
@@ -4793,7 +4792,7 @@
       "placeText":"Ep. VII 23",
       "position":"1",
       "iriWD":"https://www.wikidata.org/entity/Q13712",
-      "latitude": "41.796185 ", 
+      "latitude": "41.796185", 
       "longitude": "12.329357",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/423080"
@@ -4819,7 +4818,7 @@
       "placeText":"Ep. XI 23",
       "position":"2",
       "iriWD":"https://www.wikidata.org/entity/Q13712",
-      "latitude": "41.796185 ",
+      "latitude": "41.796185",
       "longitude": "12.329357",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/423080"
@@ -4845,7 +4844,7 @@
       "placeText":"Mon. II iv 10",
       "position":"3",
       "iriWD":"https://www.wikidata.org/entity/Q13712",
-      "latitude": "41.796185 ",
+      "latitude": "41.796185",
       "longitude": "12.329357",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/423080"
@@ -5697,8 +5696,8 @@
       "placeText":"Mon. II iv 6",
       "position":"1",
       "iriWD":"https://www.wikidata.org/entity/Q1016",
-      "latitude":"27",
-      "longitude":"17",
+      "latitude":"27.0",
+      "longitude":"17.0",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/716588"
    },
@@ -5723,8 +5722,8 @@
       "placeText":"Eg. IV 23",
       "position":"1",
       "iriWD":"https://www.wikidata.org/entity/Q1016",
-      "latitude":"27",
-      "longitude":"17",
+      "latitude":"27.0",
+      "longitude":"17.0",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/716588"
    },
@@ -5803,7 +5802,7 @@
       "position": "1",
       "iriWD": "https://www.wikidata.org/entity/Q160570",
       "latitude": "46.166389",
-      "longitude": "13",
+      "longitude": "13.0",
       "VDLlemma": ""
    },
    {
@@ -5879,10 +5878,9 @@
       "placeText": "Mon. II viii 6",
       "position": "2",
       "iriWD": "https://www.wikidata.org/entity/Q794",
-      "latitude": "32",
-      "longitude": "53",
-      "VDLlemma": "",
-	  "iri_pleiades":""
+      "latitude": "32.0",
+      "longitude": "53.0",
+      "VDLlemma": ""
    },
   {
       "name": "Perse",
@@ -5905,10 +5903,9 @@
       "placeText": "Mon. II viii 7",
       "position": "3",
       "iriWD": "https://www.wikidata.org/entity/Q794",
-      "latitude": "32",
-      "longitude": "53",
-      "VDLlemma": "",
-	  "iri_pleiades":""
+      "latitude": "32.0",
+      "longitude": "53.0",
+      "VDLlemma": ""
    },
    {
       "name": "Parnasus",
@@ -5957,10 +5954,9 @@
       "placeText": "De vulg. I x 5",
       "position": "1",
       "iriWD": "https://www.wikidata.org/entity/Q20571",
-      "latitude": "42.733333",
-      "longitude": "12.73333",
-      "VDLlemma": "",
-	  "iri_pleiades":""
+      "latitude":"42.733333333",
+      "longitude":"12.733333333",
+      "VDLlemma": ""
    },
    {
       "name": "Castrum Poppii",
@@ -5985,8 +5981,7 @@
       "iriWD": "https://www.wikidata.org/entity/Q52095",
       "latitude": "43.735833",
       "longitude": "11.761667",
-      "VDLlemma": "",
-	  "iri_pleiades":""
+      "VDLlemma": ""
    },
    {
       "name":"Meotidis palus",
@@ -6037,8 +6032,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1047110",
       "latitude":"43.843333",
       "longitude":"11.791111",
-      "VDLlemma":"",
-      "iri_pleiades":""
+      "VDLlemma":""
    },
     {
       "name":"Fractenses ",
@@ -6063,8 +6057,7 @@
       "iriWD":"",
       "latitude":"43.986474054279384",
       "longitude":"11.668997996848073",
-      "VDLlemma":"",
-      "iri_pleiades":""
+      "VDLlemma":""
    },
    {
       "name":"Trinacria",
@@ -6167,8 +6160,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1243",
       "latitude":"45.733333333",
       "longitude":"11.85",
-      "VDLlemma":"",
-      "iri_pleiades":""
+      "VDLlemma":""
    },
     {
       "name":"Marchia (Anconitana)",
@@ -6193,8 +6185,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1279",
       "latitude":"43.316666666",
       "longitude":"13.0",
-      "VDLlemma":"",
-      "iri_pleiades":""
+      "VDLlemma":""
    },
     {
       "name":"Caistrus",
@@ -6219,8 +6210,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q922382",
       "latitude":"37.9578",
       "longitude":"27.2635",
-      "VDLlemma":"",
-      "iri_pleiades":""
+      "VDLlemma":""
    },
     {
       "name":"Sarpina",
@@ -6245,8 +6235,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q495445",
 	  "latitude":"44.493888888",
       "longitude":"11.342777777",
-      "VDLlemma":"",
-      "iri_pleiades":""
+      "VDLlemma":""
    },
        {
      "name":"Rhenus",
@@ -6297,8 +6286,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q244482",
       "latitude":"44.1774",
       "longitude":"12.12479",
-      "VDLlemma":"",
-	  "iri_pleiades":""
+      "VDLlemma":""
    },
     {
       "name":"Oc(c)eanus",
@@ -6403,8 +6391,8 @@
       "placeText":"Mon. II iv 8",
       "position":"3",
       "iriWD":"https://www.wikidata.org/entity/Q34925",
-      "latitude":"41.893267289059715",
-      "longitude":"12.482866001754324",
+      "latitude":"41.893333",
+      "longitude":"12.483056",
       "VDLlemma":"",
 	  "iri_pleiades":"https://pleiades.stoa.org/places/422865"
    },
@@ -6431,8 +6419,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q752553",
       "latitude":"41.891556",
       "longitude":"12.482216",
-      "VDLlemma":"",
-	  "iri_pleiades":""
+      "VDLlemma":""
    },
    {
       "name":"Caudine Furce",
@@ -6457,8 +6444,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q3835978",
       "latitude":"41.05",
       "longitude":"14.516667",
-      "VDLlemma":"",
-	  "iri_pleiades":""
+      "VDLlemma":""
    },
    {
       "name":"Ytali",
@@ -6507,8 +6493,8 @@
       "placeText":"De vulg. I viii 3",
       "position":"1",
       "iriWD":"https://www.wikidata.org/entity/Q142",
-      "latitude":"47",
-      "longitude":"2",
+      "latitude":"47.0",
+      "longitude":"2.0",
       "VDLlemma":"",
       "iri_pleiades":"https://pleiades.stoa.org/places/108991"
    },
