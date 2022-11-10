@@ -198,7 +198,7 @@ public class ModelImago {
 				String s_library = library.replaceAll(" ", "_").toLowerCase();
 				String s_library_place = library_place.replaceAll(" ", "_").toLowerCase();
 				String s_signature = signature.replaceAll(" ", "_").toLowerCase();
-				String s_folios = library.replaceAll(" ", "_").toLowerCase();
+				String s_folios = folios.replaceAll(" ", "_").toLowerCase();
 
 
 				// Define all the iris
@@ -232,6 +232,8 @@ public class ModelImago {
 				Literal l_manuscript_author = model.createTypedLiteral(manuscript_author_name);
 				Literal l_manuscript_title = model.createTypedLiteral(manuscript_title);
 				Literal l_coordinates = model.createTypedLiteral(toWKT(manuscript.getLibrary().getPlace().getLat(), manuscript.getLibrary().getPlace().getLon()));
+				Literal l_library = model.createTypedLiteral(manuscript.getLibrary().getName());
+				Literal l_place = model.createTypedLiteral(manuscript.getLibrary().getPlace().getName());
 				Literal l_signature = model.createTypedLiteral(signature);
 				Literal l_folios = model.createTypedLiteral(folios);
 				Literal l_incipit_dedication = model.createTypedLiteral(incipit_dedication);
@@ -271,6 +273,8 @@ public class ModelImago {
             	model.add(_b_manuscript_title, vocabulary.p190_has_symbolic_content, l_manuscript_title);
 				model.add(r_manuscript, vocabulary.p50_has_current_keeper, r_library);
             	model.add(r_library, vocabulary.p74_has_current_or_former_residence, r_place_library);
+            	model.add(r_library, vocabulary.p190_has_symbolic_content, l_library);
+				model.add(r_place_library, vocabulary.p190_has_symbolic_content, l_place);
 				model.add(r_place_library, vocabulary.p168_place_is_defined_by, l_coordinates);
 				model.add(r_signature, vocabulary.p190_has_symbolic_content, l_signature);
             	model.add(r_manuscript, vocabulary.p1_is_identified_by, r_signature);
