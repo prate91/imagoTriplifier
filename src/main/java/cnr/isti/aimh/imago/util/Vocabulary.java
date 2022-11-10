@@ -159,7 +159,7 @@ public class Vocabulary {
     // Properties eFRBRoo
 
     this.r4_embodies = model.getProperty(Vocabulary.ilrmoo + "R4embodies");
-    this.r7i_is_materialized_in = model.getProperty(Vocabulary.ilrmoo + "R7i_isMaterializedIn");
+    this.r7i_is_materialized_in = model.getProperty(Vocabulary.ilrmoo + "R7i_is_materialized_in");
     this.r15_has_fragment = model.getProperty(Vocabulary.ilrmoo + "R15_has_fragment");
     this.r17_created = model.getProperty(Vocabulary.ilrmoo + "R17_created");
     this.r18_created = model.getProperty(Vocabulary.ilrmoo + "R18_created");
