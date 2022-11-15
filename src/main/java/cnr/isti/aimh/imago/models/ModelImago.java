@@ -255,7 +255,7 @@ public class ModelImago {
 				model.add(r_library, RDF.type, vocabulary.library);
 				model.add(r_place_library, RDF.type, vocabulary.e53_place);
 				model.add(r_signature, RDF.type, vocabulary.e42_identifier);
-				model.add(r_folios, RDF.type, folios);
+				model.add(r_folios, RDF.type, vocabulary.folios);
 				model.add(r_incipit_dedication, RDF.type, vocabulary.e90_symbolic_object);
 				model.add(r_explicit_dedication, RDF.type, vocabulary.e90_symbolic_object);
 				model.add(r_incipit_text, RDF.type, vocabulary.e90_symbolic_object);
