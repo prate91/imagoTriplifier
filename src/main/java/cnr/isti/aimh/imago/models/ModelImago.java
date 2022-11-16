@@ -150,7 +150,7 @@ public class ModelImago {
             for(Place place : lemma.getPlaces()) {
             	String place_iri = place.getIri();
             	Resource r_place = model.createResource(place_iri);
-            	Resource r_toponym = model.createResource(); // che iri dare? 
+            	Resource r_toponym = model.createResource(place.getName().replaceAll(" ", "_").toLowerCase()); // che iri dare? 
 				// nei toponimi String toponymURI = e.getName().replaceAll(" ", "_").toLowerCase(); 
             	model.add(r_place, RDF.type, vocabulary.e53_place);
             	model.add(r_toponym, RDF.type, vocabulary.toponym);

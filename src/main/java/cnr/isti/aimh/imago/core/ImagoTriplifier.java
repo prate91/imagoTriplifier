@@ -64,10 +64,12 @@ public class ImagoTriplifier {
 			switch (c) {
 			case 'D' : // Dante's toponyms triplification
                 jin = new JacksonImport(prop.getJson_toponyms(), c);
-                OntModel model = ModelToponyms.populateModel(ModelToponyms.importModel(prop.getImago_ontology()), jin.getList_toponyms());
-                if(fusekiKB.InsertModelIntoGraph(model, "toponyms")){
+                OntModel model_toponyms = ModelToponyms.populateModel(ModelToponyms.importModel(prop.getImago_ontology()), jin.getList_toponyms());
+                if(fusekiKB.InsertModelIntoGraph(model_toponyms, "toponyms")){
                     System.out.println("The model is triplified and put in IMAGO KB");
                 }
+				OutputStream out_toponyms = new FileOutputStream("toponyms-model.ttl");
+				RDFDataMgr.write(out_toponyms, model_toponyms, Lang.TURTLE);
 				break;
 			case 'I' : // Imago lemmas triplification
 				jin = new JacksonImport(prop.getJson_imago(), c);
@@ -75,8 +77,8 @@ public class ImagoTriplifier {
 				if(fusekiKB.InsertModelIntoGraph(model_imago, "archive")){
                     System.out.println("The model is triplified and put in IMAGO KB");
                 }
-				OutputStream out = new FileOutputStream("imago-model.ttl");
-				RDFDataMgr.write(out, model_imago, Lang.TURTLE);
+				OutputStream out_imago = new FileOutputStream("imago-model.ttl");
+				RDFDataMgr.write(out_imago, model_imago, Lang.TURTLE);
 				break;
             }
 		} while (c!='E');
