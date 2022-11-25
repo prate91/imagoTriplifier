@@ -74,6 +74,7 @@ public class ImagoTriplifier {
 			case 'I' : // Imago lemmas triplification
 				jin = new JacksonImport(prop.getJson_imago(), c);
 				OntModel model_imago = ModelImago.populateModel(ModelImago.importModel(prop.getImago_ontology()), jin.getList_lemmas());
+				OntModel model_only_imago = ModelImago.importModel(prop.getImago_ontology());
 				if(fusekiKB.InsertModelIntoGraph(model_imago, "archive")){
                     System.out.println("The model is triplified and put in IMAGO KB");
                 }
