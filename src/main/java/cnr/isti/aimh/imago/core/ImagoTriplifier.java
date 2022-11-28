@@ -36,7 +36,7 @@ public class ImagoTriplifier {
 		System.out.println("**************************************");
 	}
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
 
         input = new Scanner(System.in);
 

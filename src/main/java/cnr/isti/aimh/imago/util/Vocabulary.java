@@ -102,6 +102,9 @@ public class Vocabulary {
   public Property is_text_explicit_of;
   public Property is_composed_of_place_name;
   public Property is_identified_in_the_printed_edition_by;
+  public Property has_url_manuscript;
+  public Property has_url_manuscript_description;
+  public Property has_other_contents;
 
 
   public Vocabulary(Model model){
@@ -186,6 +189,9 @@ public class Vocabulary {
     this.is_text_explicit_of = model.getProperty(Vocabulary.imago + "is_text_explicit_of");
     this.is_composed_of_place_name = model.getProperty(Vocabulary.imago + "is_composed_of_place_name");
     this.is_identified_in_the_printed_edition_by = model.getProperty(Vocabulary.imago + "is_identified_in_the_printed_edition_by");
+    this.has_url_manuscript = model.getProperty(Vocabulary.imago + "has_url_manuscript");
+    this.has_url_manuscript_description = model.getProperty(Vocabulary.imago + "has_url_manuscript_description");
+    this.has_other_contents = model.getProperty(Vocabulary.imago + "has_other_contents");
 
   }
 

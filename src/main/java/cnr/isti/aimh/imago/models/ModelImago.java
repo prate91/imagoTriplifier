@@ -3,6 +3,7 @@ package cnr.isti.aimh.imago.models;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.ontology.OntDocumentManager;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
@@ -92,6 +93,7 @@ public class ModelImago {
      * @param model     the model imported from the function importModel
      * @param lemmas    the list of lemmas imported from a json
      * @return          the model with the individuals
+	 * @throws URISyntaxException
      *  
      */
 	public static OntModel populateModel(OntModel model, List<Root> lemmas) {
@@ -295,6 +297,11 @@ public class ModelImago {
 				Literal l_explicit_text = null;
 				Literal l_date_manuscript =  null;
 				Literal l_sources = null;
+				Literal l_url_manuscript = null;
+				Literal l_url_manuscript_description = null;
+				Literal l_notes = null;
+
+				
 
 				if(manuscript_author_name!=""){ l_manuscript_author = model.createTypedLiteral(manuscript_author_name); }
 				if(manuscript_title!=""){ l_manuscript_title = model.createTypedLiteral(manuscript_title); }
@@ -309,6 +316,14 @@ public class ModelImago {
 				if(explicit_text!=""){ l_explicit_text = model.createTypedLiteral(explicit_text); }
 				if(date_manuscript!=""){ l_date_manuscript =  model.createTypedLiteral(date_manuscript); }
 				l_sources = model.createTypedLiteral(sources);
+				if(manuscript.getNotes()!="") l_notes = model.createTypedLiteral(manuscript.getNotes());
+				if(manuscript.getUrl()!=""){
+					l_url_manuscript = model.createTypedLiteral(manuscript.getUrl()); 
+				}
+				if(manuscript.getUrlDescription()!=""){
+					l_url_manuscript_description =  model.createTypedLiteral(manuscript.getUrlDescription()); 
+				}
+				
 
 
 				// Create all blank nodes
@@ -407,6 +422,18 @@ public class ModelImago {
 					model.add(r_manuscript, vocabulary.has_secondary_sources, l_sources);
 				}
 
+				if(manuscript.getUrl()!=""){
+					model.add(r_manuscript, vocabulary.has_url_manuscript, l_url_manuscript);
+				}
+
+				if(manuscript.getUrlDescription()!=""){
+					model.add(r_manuscript, vocabulary.has_url_manuscript_description, l_url_manuscript_description);
+				}
+
+				if(manuscript.getNotes()!=""){
+					model.add(r_manuscript, vocabulary.p3_has_note, l_notes);
+				}
+
             	
 				// TO-DO 
 
@@ -497,6 +524,7 @@ public class ModelImago {
 				Literal l_primary_sources = null;
 				Literal l_ecdotic = null;
 				Literal l_sources = null;
+				Literal l_other_contents = null;
 				
 
 				if(print_edition.getAuthor()!="") l_author_print_edition = model.createTypedLiteral(print_edition.getAuthor());
@@ -520,6 +548,7 @@ public class ModelImago {
 				if(print_edition.getPrimarySources()!="") l_primary_sources = model.createTypedLiteral(print_edition.getPrimarySources());
 				if(ecdotic!="") l_ecdotic = model.createTypedLiteral(ecdotic);
 				if(sources!="") l_sources = model.createTypedLiteral(sources);
+				if(print_edition.getOtherContents()!="") l_other_contents = model.createTypedLiteral(print_edition.getOtherContents());
 				
 
 				// Create all blank nodes
@@ -623,6 +652,9 @@ public class ModelImago {
 				}
 				if(sources!=""){
 					model.add(r_print_edition, vocabulary.has_secondary_sources, l_sources);
+				}
+				if(print_edition.getOtherContents()!=""){
+					model.add(r_print_edition, vocabulary.has_other_contents, l_other_contents);
 				}
 
 				
