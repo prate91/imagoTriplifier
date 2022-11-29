@@ -105,6 +105,7 @@ public class Vocabulary {
   public Property has_url_manuscript;
   public Property has_url_manuscript_description;
   public Property has_other_contents;
+  public Property has_abstract;
 
 
   public Vocabulary(Model model){
@@ -192,6 +193,7 @@ public class Vocabulary {
     this.has_url_manuscript = model.getProperty(Vocabulary.imago + "has_url_manuscript");
     this.has_url_manuscript_description = model.getProperty(Vocabulary.imago + "has_url_manuscript_description");
     this.has_other_contents = model.getProperty(Vocabulary.imago + "has_other_contents");
+    this.has_abstract = model.getProperty(Vocabulary.imago + "has_abstract");
 
   }
 
