@@ -136,6 +136,7 @@ public class ModelImago {
 			// Literal l_italian_author_name = model.createTypedLiteral(lemma.getAuthor().getAlias().get(0));
 			Literal l_italian_author_name = model.createTypedLiteral(lemma.getAuthor().getName());
 			Literal l_work_title = model.createTypedLiteral(lemma.getWork().getTitle());
+			Literal l_abstract = model.createTypedLiteral(lemma.getAbstract());
 
 
 			///////////
@@ -155,6 +156,10 @@ public class ModelImago {
 
 			model.add(r_expression_creation, vocabulary.p14_carried_out_by, r_author);
 			model.add(r_expression_creation, vocabulary.r17_created, r_work);
+
+			if(lemma.getAbstract()!=""){
+				model.add(r_expression_creation, vocabulary.has_abstract, l_abstract);
+			}
 
 			
 			Resource _b_author = checkBlankNode(blank_author, lemma.getAuthor().getIri(), model);
@@ -389,7 +394,7 @@ public class ModelImago {
 				// incipit dedication
 				if(incipit_dedication!=""){	
 					model.add(r_incipit_dedication, vocabulary.p190_has_symbolic_content, l_incipit_dedication);
-					model.add(r_incipit_dedication, vocabulary.is_incipit_dedication_of,r_manifestation );
+					model.add(r_incipit_dedication, vocabulary.is_incipit_dedication_of,r_manifestation);
 				}
 
                 //explicit proemio
