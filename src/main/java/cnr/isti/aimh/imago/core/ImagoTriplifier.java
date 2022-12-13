@@ -5,9 +5,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Scanner;
 
+import org.apache.jena.dboe.base.file.Location;
+
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.sparql.core.DatasetGraph;
+import org.apache.jena.tdb2.DatabaseMgr;
 
 import cnr.isti.aimh.imago.models.ModelImago;
 import cnr.isti.aimh.imago.models.ModelToponyms;
@@ -77,9 +81,12 @@ public class ImagoTriplifier {
 				OntModel model_only_imago = ModelImago.importModel(prop.getImago_ontology());
 				if(fusekiKB.InsertModelIntoGraph(model_imago, "archive")){
                     System.out.println("The model is triplified and put in IMAGO KB");
-                }
+                }				
 				OutputStream out_imago = new FileOutputStream("imago-model.ttl");
 				RDFDataMgr.write(out_imago, model_imago, Lang.TURTLE);
+				// for(int i=0; i<100; i++){
+				// 	fusekiKB.InsertModelIntoGraph("imago-model.ttl", "archive");
+				// }
 				break;
             }
 		} while (c!='E');

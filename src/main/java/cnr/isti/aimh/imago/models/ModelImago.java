@@ -63,7 +63,7 @@ public class ModelImago {
      * @return      a string in WKT of a point
 	 */
 	public static String toWKT(String lat, String lon){
-		return "POINT (" + lon + " " + lat + ")";
+		return "POINT(" + lon + " " + lat + ")";
 	}
 
 	/**
