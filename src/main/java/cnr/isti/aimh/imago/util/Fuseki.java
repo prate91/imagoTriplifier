@@ -22,10 +22,20 @@ public class Fuseki {
     }
 
     public Boolean InsertModelIntoGraph(OntModel model, String graph_name){
-        RDFConnection conneg = RDFConnectionFactory.connectPW(this.dataset_url,this.username, this.password);
+        // RDFConnection conneg = RDFConnectionFactory.connectPW(this.dataset_url,this.username, this.password);
+        RDFConnection conneg = RDFConnectionFactory.connect(this.dataset_url);
         String graph_url = this.dataset_url + "/" + graph_name;
         System.out.print(graph_url);
         conneg.put(graph_url, model);
+        return true;
+    }
+
+    public Boolean InsertModelIntoGraph(String m, String graph_name){
+        // RDFConnection conneg = RDFConnectionFactory.connectPW(this.dataset_url,this.username, this.password);
+        RDFConnection conneg = RDFConnectionFactory.connect(this.dataset_url);
+        String graph_url = this.dataset_url + "/" + graph_name;
+        System.out.print(graph_url);
+        conneg.put(graph_url, m);
         return true;
     }
 
