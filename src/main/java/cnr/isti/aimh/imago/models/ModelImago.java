@@ -579,7 +579,7 @@ public class ModelImago {
 				model.add(r_print_edition, RDF.type, vocabulary.print_edition);
 				if(print_edition.getCurator()!="") model.add(r_curator, RDF.type, vocabulary.curator);
 				if(print_edition.getPlace().getName()!=null) model.add(r_place_print_edition, RDF.type, vocabulary.e53_place);
-				if(print_edition.getPlaceAsAppear()!="") model.add(r_place_as_appear, RDF.type, vocabulary.e41_appellation);
+				if(print_edition.getPlaceAsAppear()!="") {model.add(r_place_as_appear, RDF.type, vocabulary.e41_appellation);}
 				if(print_edition.getDateEdition()!="") model.add(r_date_print_edition, RDF.type, vocabulary.e52_time_span);
 				if(print_edition.getEditor()!="") model.add(r_publisher, RDF.type, vocabulary.publisher);
 				if(print_edition.getFormat()!="") model.add(r_format, RDF.type, vocabulary.format);
@@ -609,8 +609,10 @@ public class ModelImago {
 					model.add(r_toponym_print_edition, vocabulary.p190_has_symbolic_content, l_place_print_edition);
 					model.add(r_place_print_edition, vocabulary.p168_place_is_defined_by, _b_coordinates);
 					model.add(_b_coordinates, vocabulary.p190_has_symbolic_content, l_coordinates);
+					if(print_edition.getPlaceAsAppear()!="") {
 					model.add(r_place_print_edition, vocabulary.is_identified_in_the_printed_edition_by, r_place_as_appear);
 					model.add(r_place_as_appear, vocabulary.p190_has_symbolic_content, l_place_name_as_appear);
+					}
 				}
 
 				if(print_edition.getDateEdition()!=""){
