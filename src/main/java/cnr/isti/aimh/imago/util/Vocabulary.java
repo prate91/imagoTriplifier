@@ -12,7 +12,7 @@ public class Vocabulary {
 	public static final String efrbroo = "http://erlangen-crm.org/efrbroo/";
   public static final String ilrmoo = "http://imagoarchive.it/ilrmoo/";
 	public static final String cnt = "http://www.w3.org/2011/content#";
-	public static final String ecrm = "http://erlangen-crm.org/211015/";
+	public static final String ecrm = "http://erlangen-crm.org/200717/";
 	public static final String crminf = "https://dlnarratives.eu/crminf/";
 	public static final String dc = "http://purl.org/dc/elements/1.1/";
 	public static final String dctypes = "http://purl.org/dc/dcmitype/";
