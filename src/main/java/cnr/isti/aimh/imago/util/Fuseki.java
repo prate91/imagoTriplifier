@@ -3,13 +3,14 @@ package cnr.isti.aimh.imago.util;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdfconnection.RDFConnection;
 import org.apache.jena.rdfconnection.RDFConnectionFactory;
+import org.apache.jena.update.Update;
 
 
 public class Fuseki {
 
     private String dataset_url;
     private String sparql_endpoint = dataset_url + "/sparql";
-    private String sparql_pdate = dataset_url + "/update";
+    private String sparql_update = dataset_url + "/update";
     private String graph_store = dataset_url + "/data";
 
     private String username;
@@ -27,6 +28,16 @@ public class Fuseki {
         String graph_url = this.dataset_url + "/" + graph_name;
         System.out.println(graph_url);
         conneg.put(graph_url, model);
+        return true;
+    }
+
+    public Boolean InsertModelIntoGraph(String filename, String graph_name){
+        RDFConnection conneg = RDFConnectionFactory.connectPW(this.dataset_url,this.username, this.password);
+        // RDFConnection conneg = RDFConnectionFactory.connect(this.dataset_url);
+        String graph_url = this.dataset_url + "/" + graph_name;
+        System.out.println(graph_url);
+        
+        conneg.put(graph_url, filename);
         return true;
     }
 
@@ -55,12 +66,12 @@ public class Fuseki {
         this.sparql_endpoint = sparql_endpoint;
     }
 
-    public String getSparql_pdate() {
-        return sparql_pdate;
+    public String getSparql_update() {
+        return sparql_update;
     }
 
-    public void setSparql_pdate(String sparql_pdate) {
-        this.sparql_pdate = sparql_pdate;
+    public void setSparql_update(String sparql_update) {
+        this.sparql_update = sparql_update;
     }
 
     public String getGraph_store() {
@@ -71,6 +82,15 @@ public class Fuseki {
         this.graph_store = graph_store;
     }
 
+    public static void main(String[] args) {
+
+        // Read file config.properties
+        ConfigProperties prop = new ConfigProperties("config.properties");
+
+        Fuseki fusekiKB = new Fuseki(prop.getDataset_url(), prop.getFuseki_user(), prop.getFuseki_pw());
+
+        fusekiKB.InsertModelIntoGraph("mmm-imago.ttl", "mmm");
+    }
 
     
 }
