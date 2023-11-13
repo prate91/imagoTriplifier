@@ -1,8 +1,6 @@
 package cnr.isti.aimh.imago.models;
 
-import java.util.HashMap;
 import java.util.List;
-
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.Literal;
@@ -37,13 +35,13 @@ public class ModelToponyms {
 		
 		// Vengono dichiarate le risorse da creare
 		Resource resource_Toponym = null; 
-		Resource resource_Toponym_it = null; 
-		Resource resource_Toponym_en = null; 
+		// Resource resource_Toponym_it = null; 
+		// Resource resource_Toponym_en = null; 
 		Literal literal_Toponym = null; 
 		Literal literal_Toponym_it = null; 
 		Literal literal_Toponym_en = null; 
 		Resource resource_Work = null; 
-		Resource resource_Coordinates = null; 
+		// Resource resource_Coordinates = null; 
 		Resource resource_Fragment = null;
 		Resource resource_Place = null;
 		Resource resource_Pleiades= null;
@@ -52,7 +50,7 @@ public class ModelToponyms {
 		Literal literal_VDL = null;
 
 		int fragmentID = 1;
-		HashMap<String, Resource> places = new HashMap<String, Resource>();
+		// HashMap<String, Resource> places = new HashMap<String, Resource>();
 		Vocabulary vocabulary = new Vocabulary(model);
 
 		Resource r_author = model.createResource("https://www.wikidata.org/entity/Q1067");

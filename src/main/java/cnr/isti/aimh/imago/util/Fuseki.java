@@ -3,7 +3,6 @@ package cnr.isti.aimh.imago.util;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdfconnection.RDFConnection;
 import org.apache.jena.rdfconnection.RDFConnectionFactory;
-import org.apache.jena.update.Update;
 
 
 public class Fuseki {

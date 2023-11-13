@@ -2,17 +2,13 @@ package cnr.isti.aimh.imago.models;
 
 import java.util.HashMap;
 import java.util.List;
-
-import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.ontology.OntDocumentManager;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.sparql.function.library.print;
 import org.apache.jena.vocabulary.RDF;
-
 import cnr.isti.aimh.imago.pojo.full.*;
 import cnr.isti.aimh.imago.util.Vocabulary;
 

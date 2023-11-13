@@ -4,15 +4,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Scanner;
-
-import org.apache.jena.dboe.base.file.Location;
-
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.sparql.core.DatasetGraph;
-import org.apache.jena.tdb2.DatabaseMgr;
-
 import cnr.isti.aimh.imago.models.ModelImago;
 import cnr.isti.aimh.imago.models.ModelToponyms;
 import cnr.isti.aimh.imago.util.ConfigProperties;
@@ -78,7 +72,7 @@ public class ImagoTriplifier {
 			case 'I' : // Imago lemmas triplification
 				jin = new JacksonImport(prop.getJson_imago(), c);
 				OntModel model_imago = ModelImago.populateModel(ModelImago.importModel(prop.getImago_ontology()), jin.getList_lemmas());
-				OntModel model_only_imago = ModelImago.importModel(prop.getImago_ontology());
+				// OntModel model_only_imago = ModelImago.importModel(prop.getImago_ontology());
 				if(fusekiKB.InsertModelIntoGraph(model_imago, "archive")){
                     System.out.println("The model is triplified and put in IMAGO KB");
                 }				
