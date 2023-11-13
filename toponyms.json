@@ -1372,7 +1372,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q16990",
       "latitude":"37.750834514",
       "longitude":"14.993220288",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/564",
       "iri_pleiades":"https://pleiades.stoa.org/places/462077"
    },
    {
@@ -3192,7 +3192,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1282",
       "latitude":"42.5",
       "longitude":"12.5",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1335",
       "iri_pleiades":"https://pleiades.stoa.org/places/432900"
    },
    {
@@ -3218,7 +3218,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1282",
       "latitude":"42.5",
       "longitude":"12.5",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1335",
       "iri_pleiades":"https://pleiades.stoa.org/places/432900"
    },
    {
@@ -3244,7 +3244,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1282",
       "latitude":"42.5",
       "longitude":"12.5",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1335",
       "iri_pleiades":"https://pleiades.stoa.org/places/432900"
    },
    {
@@ -3270,7 +3270,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1282",
       "latitude":"42.5",
       "longitude":"12.5",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1335",
       "iri_pleiades":"https://pleiades.stoa.org/places/432900"
    },
    {
@@ -3552,7 +3552,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q9430",
       "latitude":"35.7999",
       "longitude":"-8.1948",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1369",
       "iri_pleiades":"https://pleiades.stoa.org/places/845"
    },
    {
@@ -3578,7 +3578,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q9430",
       "latitude":"35.7999",
       "longitude":"-8.1948",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1369",
       "iri_pleiades":"https://pleiades.stoa.org/places/845"
    },
    {
@@ -3604,7 +3604,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q9430",
       "latitude":"35.7999",
       "longitude":"-8.1948",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1369",
       "iri_pleiades":"https://pleiades.stoa.org/places/845"
    },
    {
@@ -3630,7 +3630,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q9430",
       "latitude":"35.7999",
       "longitude":"-8.1948",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1369",
       "iri_pleiades":"https://pleiades.stoa.org/places/845"
    },
    {
@@ -3785,7 +3785,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q2257429",
       "latitude":"38.26472222",
       "longitude":"15.65083333",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/565",
       "iri_pleiades":"https://pleiades.stoa.org/places/462416"
    },
    {
@@ -3811,7 +3811,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q2257429",
       "latitude":"38.26472222",
       "longitude":"15.65083333",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/565",
       "iri_pleiades":"https://pleiades.stoa.org/places/462416"
    },
    {
@@ -4872,12 +4872,12 @@
       "iriWD":"https://www.wikidata.org/entity/Q1460",
       "latitude":"37.599958333",
       "longitude":"14.015377777",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1411",
       "iri_pleiades":"https://pleiades.stoa.org/places/462492"
    },
    {
-      "name":"Trinacris",
-      "lemma":"Trinacris",
+      "name":"Trinacrida",
+      "lemma":"Trinacrida",
       "form":"Trinacride",
       "labelIta":"Sicilia",
       "labelEng":"Sicily",
@@ -4976,7 +4976,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5002,7 +5002,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5028,7 +5028,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5054,7 +5054,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5080,7 +5080,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5106,7 +5106,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5132,7 +5132,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5158,7 +5158,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5184,7 +5184,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5210,7 +5210,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -5236,7 +5236,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1273",
       "latitude":"43.35",
       "longitude":"11.016666666",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1485",
       "iri_pleiades":"https://pleiades.stoa.org/places/413122"
    },
    {
@@ -6082,7 +6082,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1460",
       "latitude":"37.599958333",
       "longitude":"14.015377777",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1411",
       "iri_pleiades":"https://pleiades.stoa.org/places/462492"
    },
    {
@@ -6160,7 +6160,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q1243",
       "latitude":"45.733333333",
       "longitude":"11.85",
-      "VDLlemma":""
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1364"
    },
     {
       "name":"Marchia (Anconitana)",
@@ -6311,7 +6311,7 @@
       "iriWD":"https://www.wikidata.org/entity/Q9430",
       "latitude":"35.7999",
       "longitude":"-8.1948",
-      "VDLlemma":"",
+      "VDLlemma":"http://www.vocabolariodantescolatino.it/lexicad/voce/1369",
 	  "iri_pleiades":"https://pleiades.stoa.org/places/845"
    },
    {
