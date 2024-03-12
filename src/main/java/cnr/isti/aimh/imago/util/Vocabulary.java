@@ -95,6 +95,7 @@ public class Vocabulary {
   public Property has_figure_note;
   public Property has_introduction_note;
   public Property has_reprint_date;
+  public Property has_ecdotic_type;
   public Property is_identified_by_toponym;
   public Property is_incipit_dedication_of;
   public Property is_explicit_dedication_of;
@@ -106,6 +107,12 @@ public class Vocabulary {
   public Property has_url_manuscript_description;
   public Property has_other_contents;
   public Property has_abstract;
+  public Property has_decoration;
+  public Property compiled_form;
+  public Property last_mod_form;
+  public Property has_start_date;
+  public Property has_end_date;
+  public Property has_alias;
 
 
   public Vocabulary(Model model){
@@ -183,6 +190,7 @@ public class Vocabulary {
     this.has_figure_note = model.getProperty(Vocabulary.imago + "has_figure_note");
     this.has_introduction_note = model.getProperty(Vocabulary.imago + "has_introduction_note");
     this.has_reprint_date = model.getProperty(Vocabulary.imago + "has_reprint_date");
+    this.has_ecdotic_type = model.getProperty(Vocabulary.imago + "has_ecdotic_type");
     this.is_identified_by_toponym = model.getProperty(Vocabulary.imago + "is_identified_by_toponym");
     this.is_incipit_dedication_of = model.getProperty(Vocabulary.imago + "is_incipit_dedication_of");
     this.is_explicit_dedication_of = model.getProperty(Vocabulary.imago + "is_explicit_dedication");
@@ -194,6 +202,12 @@ public class Vocabulary {
     this.has_url_manuscript_description = model.getProperty(Vocabulary.imago + "has_url_manuscript_description");
     this.has_other_contents = model.getProperty(Vocabulary.imago + "has_other_contents");
     this.has_abstract = model.getProperty(Vocabulary.imago + "has_abstract");
+    this.has_decoration = model.getProperty(Vocabulary.imago + "has_decoration");
+    this.compiled_form = model.getProperty(Vocabulary.imago + "compiled_form");
+    this.last_mod_form = model.getProperty(Vocabulary.imago + "last_mod_form");
+    this.has_start_date = model.getProperty(Vocabulary.imago + "has_start_date");
+    this.has_end_date = model.getProperty(Vocabulary.imago + "has_end_date");
+    this.has_alias = model.getProperty(Vocabulary.imago + "has_alias");
 
   }
 

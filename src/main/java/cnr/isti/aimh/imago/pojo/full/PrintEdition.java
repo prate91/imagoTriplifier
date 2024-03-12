@@ -41,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class PrintEdition {
 
     @JsonProperty("date")
-    private Date date;
+    private DateImago date;
     @JsonProperty("dateString")
     private String dateString;
     @JsonProperty("notes")
@@ -88,12 +88,12 @@ public class PrintEdition {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("date")
-    public Date getDate() {
+    public DateImago getDate() {
         return date;
     }
 
     @JsonProperty("date")
-    public void setDate(Date date) {
+    public void setDate(DateImago date) {
         this.date = date;
     }
 

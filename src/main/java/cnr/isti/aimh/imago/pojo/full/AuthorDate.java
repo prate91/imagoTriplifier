@@ -23,53 +23,53 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class AuthorDate {
 
     @JsonProperty("birthDate")
-    private Date birthDate;
+    private DateImago birthDate;
     @JsonProperty("deathDate")
-    private Date deathDate;
+    private DateImago deathDate;
     @JsonProperty("floruitDate")
-    private Date floruitDate;
+    private DateImago floruitDate;
     @JsonProperty("episcopusDate")
-    private Date episcopusDate;
+    private DateImago episcopusDate;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("birthDate")
-    public Date getBirthDate() {
+    public DateImago getBirthDate() {
         return birthDate;
     }
 
     @JsonProperty("birthDate")
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(DateImago birthDate) {
         this.birthDate = birthDate;
     }
 
     @JsonProperty("deathDate")
-    public Date getDeathDate() {
+    public DateImago getDeathDate() {
         return deathDate;
     }
 
     @JsonProperty("deathDate")
-    public void setDeathDate(Date deathDate) {
+    public void setDeathDate(DateImago deathDate) {
         this.deathDate = deathDate;
     }
 
     @JsonProperty("floruitDate")
-    public Date getFloruitDate() {
+    public DateImago getFloruitDate() {
         return floruitDate;
     }
 
     @JsonProperty("floruitDate")
-    public void setFloruitDate(Date floruitDate) {
+    public void setFloruitDate(DateImago floruitDate) {
         this.floruitDate = floruitDate;
     }
 
     @JsonProperty("episcopusDate")
-    public Date getEpiscopusDate() {
+    public DateImago getEpiscopusDate() {
         return episcopusDate;
     }
 
     @JsonProperty("episcopusDate")
-    public void setEpiscopusDate(Date episcopusDate) {
+    public void setEpiscopusDate(DateImago episcopusDate) {
         this.episcopusDate = episcopusDate;
     }
 

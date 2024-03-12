@@ -26,6 +26,8 @@ public class Author {
     private String iri;
     @JsonProperty("name")
     private String name;
+    @JsonProperty("stringDatazione")
+    private String stringDatazione;
     @JsonProperty("alias")
     private List<String> alias = null;
     @JsonProperty("authorDate")
@@ -51,6 +53,14 @@ public class Author {
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
+    }
+    @JsonProperty("stringDatazione")
+    public String getStringDatazione() {
+        return stringDatazione;
+    }
+    @JsonProperty("stringDatazione")
+    public void setStringDatazione(String stringDatazione) {
+        this.stringDatazione = stringDatazione;
     }
 
     @JsonProperty("alias")

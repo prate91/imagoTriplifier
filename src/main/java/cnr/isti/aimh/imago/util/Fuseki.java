@@ -26,7 +26,10 @@ public class Fuseki {
         // RDFConnection conneg = RDFConnectionFactory.connect(this.dataset_url);
         String graph_url = this.dataset_url + "/" + graph_name;
         System.out.println(graph_url);
+        // conneg.delete(graph_url);
         conneg.put(graph_url, model);
+        // conneg.update("DROP GRAPH <https://imagoarchive.it/fuseki/imago/archive> ;");
+        // conneg.update("MOVE DEFAULT TO <https://imagoarchive.it/fuseki/imago/archive> ;");
         return true;
     }
 
@@ -37,6 +40,7 @@ public class Fuseki {
         System.out.println(graph_url);
         
         conneg.put(graph_url, filename);
+        // conneg.delete(graph_url);
         return true;
     }
 
@@ -88,7 +92,8 @@ public class Fuseki {
 
         Fuseki fusekiKB = new Fuseki(prop.getDataset_url(), prop.getFuseki_user(), prop.getFuseki_pw());
 
-        fusekiKB.InsertModelIntoGraph("mmm-imago.ttl", "mmm");
+        fusekiKB.InsertModelIntoGraph("imago-model.ttl", "archive");
+
     }
 
     
