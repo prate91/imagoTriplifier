@@ -1,21 +1,16 @@
 package cnr.isti.aimh.imago.models;
 
-import java.io.Console;
 import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Date;
 
-import org.apache.jena.base.Sys;
-import org.apache.jena.datatypes.RDFDatatype;
 import org.apache.jena.ontology.OntDocumentManager;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
