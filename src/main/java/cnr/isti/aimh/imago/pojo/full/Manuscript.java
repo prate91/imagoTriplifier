@@ -49,9 +49,9 @@ public class Manuscript {
     @JsonProperty("title")
     private String title;
     @JsonProperty("lastMod")
-    private Float lastMod;
+    private Double lastMod;
     @JsonProperty("date")
-    private Date date;
+    private DateImago date;
     @JsonProperty("dateString")
     private String dateString;
     @JsonProperty("signature")
@@ -136,22 +136,22 @@ public class Manuscript {
     }
 
     @JsonProperty("lastMod")
-    public Float getLastMod() {
+    public Double getLastMod() {
         return lastMod;
     }
 
     @JsonProperty("lastMod")
-    public void setLastMod(Float lastMod) {
+    public void setLastMod(Double lastMod) {
         this.lastMod = lastMod;
     }
 
     @JsonProperty("date")
-    public Date getDate() {
+    public DateImago getDate() {
         return date;
     }
 
     @JsonProperty("date")
-    public void setDate(Date date) {
+    public void setDate(DateImago date) {
         this.date = date;
     }
 

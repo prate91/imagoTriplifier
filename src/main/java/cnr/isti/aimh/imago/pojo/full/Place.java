@@ -2,7 +2,6 @@
 package cnr.isti.aimh.imago.pojo.full;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -15,27 +14,39 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "iri",
-    "lat",
-    "lon",
+    "originalName",
+    "originalLang",
     "name",
-    "alias",
-    "country"
+    "lang",
+    "englishName",
+    "italianName",
+    "latinName",
+    "country",
+    "coordinates"
 })
 @Generated("jsonschema2pojo")
 public class Place {
 
     @JsonProperty("iri")
     private String iri;
-    @JsonProperty("lat")
-    private String lat;
-    @JsonProperty("lon")
-    private String lon;
+    @JsonProperty("originalName")
+    private String originalName;
+    @JsonProperty("originalLang")
+    private String originalLang;
     @JsonProperty("name")
     private String name;
-    @JsonProperty("alias")
-    private List<String> alias;
+    @JsonProperty("lang")
+    private String lang;
+    @JsonProperty("englishName")
+    private String englishName;
+    @JsonProperty("italianName")
+    private String italianName;
+    @JsonProperty("latinName")
+    private String latinName;
     @JsonProperty("country")
     private Country country;
+    @JsonProperty("coordinates")
+    private String coordinates;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -49,24 +60,24 @@ public class Place {
         this.iri = iri;
     }
 
-    @JsonProperty("lat")
-    public String getLat() {
-        return lat;
+    @JsonProperty("originalName")
+    public String getOriginalName() {
+        return originalName;
     }
 
-    @JsonProperty("lat")
-    public void setLat(String lat) {
-        this.lat = lat;
+    @JsonProperty("originalName")
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
     }
 
-    @JsonProperty("lon")
-    public String getLon() {
-        return lon;
+    @JsonProperty("originalLang")
+    public String getOriginalLang() {
+        return originalLang;
     }
 
-    @JsonProperty("lon")
-    public void setLon(String lon) {
-        this.lon = lon;
+    @JsonProperty("originalLang")
+    public void setOriginalLang(String originalLang) {
+        this.originalLang = originalLang;
     }
 
     @JsonProperty("name")
@@ -79,14 +90,43 @@ public class Place {
         this.name = name;
     }
 
-    @JsonProperty("alias")
-    public List<String> getAlias() {
-        return alias;
+    @JsonProperty("lang")
+    public String getLang() {
+        return lang;
     }
 
-    @JsonProperty("alias")
-    public void setAlias(List<String> alias) {
-        this.alias = alias;
+    @JsonProperty("lang")
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
+    @JsonProperty("englishName")
+    public String getEnglishName() {
+        return englishName;
+    }
+    @JsonProperty("englishName")
+    public void setEnglishName(String englishName) {
+        this.englishName = englishName;
+    }
+
+    @JsonProperty("italianName")
+    public String getItalianName() {
+        return italianName;
+    }
+
+    @JsonProperty("italianName")
+    public void setItalianName(String italianName) {
+        this.italianName = italianName;
+    }
+
+    @JsonProperty("latinName")
+    public String getLatinName() {
+        return latinName;
+    }
+
+    @JsonProperty("latinName")
+    public void setLatinName(String latinName) {
+        this.latinName = latinName;
     }
 
     @JsonProperty("country")
@@ -98,6 +138,17 @@ public class Place {
     public void setCountry(Country country) {
         this.country = country;
     }
+
+    @JsonProperty("coordinates")
+    public String getCoordinates() {
+        return coordinates;
+    }
+
+    @JsonProperty("coordinates")
+    public void setCoordinates(String coordinates) {
+        this.coordinates = coordinates;
+    }
+    
 
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {

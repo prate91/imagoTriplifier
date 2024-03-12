@@ -73,11 +73,13 @@ public class ImagoTriplifier {
 				jin = new JacksonImport(prop.getJson_imago(), c);
 				OntModel model_imago = ModelImago.populateModel(ModelImago.importModel(prop.getImago_ontology()), jin.getList_lemmas());
 				// OntModel model_only_imago = ModelImago.importModel(prop.getImago_ontology());
+				OutputStream out_imago = new FileOutputStream("imago-model.ttl");
+				RDFDataMgr.write(out_imago, model_imago, Lang.TURTLE);
 				if(fusekiKB.InsertModelIntoGraph(model_imago, "archive")){
                     System.out.println("The model is triplified and put in IMAGO KB");
                 }				
-				OutputStream out_imago = new FileOutputStream("imago-model.ttl");
-				RDFDataMgr.write(out_imago, model_imago, Lang.TURTLE);
+				// OutputStream out_imago = new FileOutputStream("imago-model.ttl");
+				// RDFDataMgr.write(out_imago, model_imago, Lang.TURTLE);
 				// for(int i=0; i<100; i++){
 				// 	fusekiKB.InsertModelIntoGraph("imago-model.ttl", "archive");
 				// }

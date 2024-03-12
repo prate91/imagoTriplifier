@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "work",
     "author",
     "abstract",
+    "review",
     "genres",
     "places",
     "manuscripts",
@@ -31,6 +32,8 @@ public class Lemma {
     private Author author;
     @JsonProperty("abstract")
     private String abs;
+    @JsonProperty("review")
+    private Boolean review;
     @JsonProperty("genres")
     private List<Genre> genres = null;
     @JsonProperty("places")
@@ -60,6 +63,16 @@ public class Lemma {
     @JsonProperty("abstract")
     public void setAbstract(String abs) {
         this.abs = abs;
+    }
+
+    @JsonProperty("review")
+    public Boolean getReview() {
+        return review;
+    }
+
+    @JsonProperty("review")
+    public void setReview(Boolean review) {
+        this.review = review;
     }
 
     @JsonProperty("author")
