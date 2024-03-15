@@ -172,7 +172,7 @@ public class ModelImago {
 			String lemmaURI = baseURI + "resources/lemma/l" + id; // Make  the IRI of lemma (ie expression creation)
 
 			Boolean review = lemma.getReview();
-			if(review==true){
+			
 			////////////////////
 			// MAKE RESOURCES //
 			////////////////////
@@ -327,7 +327,7 @@ public class ModelImago {
 
             }
 
-			
+			if(review==true){
             for(Manuscript manuscript : lemma.getManuscripts()) {
 
 				// Get the strings from json
