@@ -334,6 +334,9 @@ public class ModelImago {
 				// if(manuscript.getLibrary().getName()==""){
 				// 	System.out.println(manuscript.getLibrary().getIri());
 				// }
+				String library_iri = manuscript.getLibrary().getIri();
+				String library_place_iri = manuscript.getLibrary().getPlace().getIri();
+
 				String library;
 				String library_place;
 					if(manuscript.getLibrary().getName()!=null){
@@ -343,7 +346,7 @@ public class ModelImago {
 						 String pattern_iri = "https://imagoarchive\\.it/resource/.*";
 
 						 // Use the matches method to check if the input matches the pattern
-						 if(manuscript.getLibrary().getIri().matches(pattern_iri)){
+						 if(library_iri.matches(pattern_iri)){
 							
 							// System.out.println(manuscript.getLibrary().getName() + " -->" + removePartBeforeComma(manuscript.getLibrary().getName()));
 							library = removePartBeforeComma(manuscript.getLibrary().getName());
@@ -360,9 +363,10 @@ public class ModelImago {
 					}else{
 						// System.out.println(lemma.getAuthor().getName());
 						// System.out.println(lemma.getWork().getTitle());
-						// System.out.println(manuscript.getLibrary().getIri());
-						// System.out.println(manuscript.getLibrary().getName());
-						library = "notKnown";
+						// System.out.println(library_iri);
+						// System.ou	t.println(manuscript.getLibrary().getName());
+						library_iri = baseURI + "resources/library/notKnown/" + m_count;
+						library = "Sconosciuta";
 					}
 				
 					if( manuscript.getLibrary().getPlace().getName()!=null){
@@ -380,9 +384,10 @@ public class ModelImago {
 				}else{
 					// System.out.println(lemma.getAuthor().getName());
 					// System.out.println(lemma.getWork().getTitle());
-					// System.out.println(manuscript.getLibrary().getIri());
+					// System.out.println(library_iri);
 					// System.out.println(manuscript.getLibrary().getName());
-						library_place = "notKnown";
+						library_place_iri = baseURI + "resources/place/notKnown/" + m_count;
+						library_place = "Sconosciuto";
 					}
 				
 				String signature = manuscript.getSignature();
@@ -467,8 +472,8 @@ public class ModelImago {
 
 				r_manuscript = model.createResource(manuscript_iri);
             	r_manifestation = model.createResource(manifestation_iri);
-				r_library = model.createResource(manuscript.getLibrary().getIri());
-				r_place_library = model.createResource(manuscript.getLibrary().getPlace().getIri());
+				r_library = model.createResource(library_iri);
+				r_place_library = model.createResource(library_place_iri);
 				r_signature = model.createResource(signature_iri);
 				if(folios!=null){ r_folios = model.createResource(folios_iri); }
 				if(incipit_dedication!=null){	 r_incipit_dedication = model.createResource(incipit_dedication_iri); }
@@ -544,8 +549,8 @@ public class ModelImago {
 				if(manuscript_author_name!=null){ _b_manuscript_author = model.createResource(); }
 				if(manuscript_title!=null){ _b_manuscript_title = model.createResource();  }
 				if(folios!=null){ _b_folios = model.createResource(); }
-				_b_library = checkBlankNode(blank_library, manuscript.getLibrary().getIri(), model);
-				_b_coordinates = checkBlankNode(blank_coordinates, manuscript.getLibrary().getPlace().getIri(), model);
+				_b_library = checkBlankNode(blank_library, library_iri, model);
+				_b_coordinates = checkBlankNode(blank_coordinates, library_place_iri, model);
 
 				// Declare all the statements rdf:type
 				model.add(r_manuscript, RDF.type, vocabulary.manuscript);
@@ -714,8 +719,10 @@ public class ModelImago {
 				r_print_edition = model.createResource(print_edition_iri);
 				r_print_edition_creation = model.createResource(print_edition_creation_iri);
 
+				String place_print_edition_iri = print_edition.getPlace().getIri();
+
 				String place_print_edition = "";
-				if(print_edition.getPlace().getIri()!=null){
+				if(place_print_edition_iri!=null){
 					if(checkLatinWords(print_edition.getPlace().getName())){
 							place_print_edition = print_edition.getPlace().getName();
 						}else{
@@ -725,8 +732,11 @@ public class ModelImago {
 								place_print_edition = print_edition.getPlace().getItalianName();
 							}
 						}
-				}
-				r_place_print_edition = model.createResource(print_edition.getPlace().getIri());
+				}else{
+						place_print_edition_iri = baseURI + "resources/printEdition/place/notKnown/" + p_count;
+						place_print_edition = "Sconosciuto";
+					}
+				r_place_print_edition = model.createResource(place_print_edition_iri);
 				// if(print_edition.getPlace().getName()!=null){
 				r_toponym_print_edition = model.createResource(baseURI + "resources/toponym/" + place_print_edition.replaceAll(" ", "_").replaceAll("[^a-zA-Z0-9\\s]", "").toLowerCase());
 				// }
@@ -767,7 +777,7 @@ public class ModelImago {
 				Literal l_annotator = null;
 				Literal l_timestamp_form = null;
 
-				if(print_edition.getPlace().getIri()!=null){
+				if(place_print_edition_iri!=null){
 					l_place_print_edition = model.createTypedLiteral(place_print_edition);
 					if(print_edition.getPlace().getCoordinates()!=null){
 						l_coordinates = model.createTypedLiteral(print_edition.getPlace().getCoordinates());
@@ -820,14 +830,14 @@ public class ModelImago {
 				if(print_edition.getEditor()!=null) _b_publisher = model.createResource();
 				if(print_edition.getFormat()!=null) _b_format = model.createResource();
 				if(print_edition.getPages()!=null) _b_pages = model.createResource();
-				_b_coordinates = checkBlankNode(blank_coordinates, print_edition.getPlace().getIri(), model);
+				_b_coordinates = checkBlankNode(blank_coordinates, place_print_edition_iri, model);
 
 				
 				// Declare all the statements rdf:type
 				model.add(r_print_edition_creation, RDF.type, vocabulary.f30_manifestation_creation);
 				model.add(r_print_edition, RDF.type, vocabulary.print_edition);
 				if(print_edition.getCurator()!=null) model.add(r_curator, RDF.type, vocabulary.curator);
-				if(print_edition.getPlace().getIri()!=null) model.add(r_place_print_edition, RDF.type, vocabulary.e53_place);
+				if(place_print_edition_iri!=null) model.add(r_place_print_edition, RDF.type, vocabulary.e53_place);
 				if(print_edition.getPlaceAsAppear()!=null) {model.add(r_place_as_appear, RDF.type, vocabulary.e41_appellation);}
 				if(print_edition.getDateString()!=null) model.add(r_date_print_edition, RDF.type, vocabulary.e52_time_span);
 				if(print_edition.getEditor()!=null) model.add(r_publisher, RDF.type, vocabulary.publisher);
@@ -854,7 +864,7 @@ public class ModelImago {
 					model.add(r_curator, vocabulary.p1_is_identified_by, _b_curator);
 					model.add(_b_curator, vocabulary.p190_has_symbolic_content, l_curator);
 				}
-				if(print_edition.getPlace().getIri()!=null){
+				if(place_print_edition_iri!=null){
 					model.add(r_print_edition_creation, vocabulary.p7_took_place_at, r_place_print_edition);
 					model.add(r_place_print_edition, vocabulary.is_identified_by_toponym, r_toponym_print_edition);
 					model.add(r_toponym_print_edition, vocabulary.p190_has_symbolic_content, l_place_print_edition);
