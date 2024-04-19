@@ -84,6 +84,10 @@ public class ImagoTriplifier {
 				// 	fusekiKB.InsertModelIntoGraph("imago-model.ttl", "archive");
 				// }
 				break;
+			case 'M' : // Imago MMM link
+			if(fusekiKB.InsertModelIntoGraph("associazioni.ttl", "mmm")){
+				System.out.println("The model is triplified and put in IMAGO KB");
+			}
             }
 		} while (c!='E');
 
