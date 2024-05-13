@@ -7,8 +7,8 @@ PREFIX osm: <https://www.openstreetmap.org/>
 PREFIX osm2rdfkey: <https://osm2rdf.cs.uni-freiburg.de/rdf/key#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
 
-SELECT DISTINCT ?title ?authorName (GROUP_CONCAT(?toponymName; separator="; ") AS ?toponymList)
-FROM <https://geosparql.isti.cnr.it/fuseki/imago/archive>
+SELECT DISTINCT ?title ?authorName ?toponymName ?wktPlace
+  FROM <https://geosparql.isti.cnr.it/fuseki/imago/archive>
 WHERE {
   ?exp_cre a ilrm:F28_Expression_Creation ;
   	         ilrm:R17_created ?work ;
@@ -34,4 +34,4 @@ WHERE {
     }
   }
   FILTER(geof:sfWithin(?wktPlace,?wktFrance)). 
-}  GROUP BY ?title ?authorName
+} 
