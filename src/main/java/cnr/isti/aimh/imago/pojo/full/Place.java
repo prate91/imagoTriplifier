@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "country",
     "coordinates"
 })
+
 @Generated("jsonschema2pojo")
 public class Place {
 
@@ -47,6 +48,8 @@ public class Place {
     private Country country;
     @JsonProperty("coordinates")
     private String coordinates;
+    @JsonProperty("wkt")
+    private String wkt;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -147,6 +150,16 @@ public class Place {
     @JsonProperty("coordinates")
     public void setCoordinates(String coordinates) {
         this.coordinates = coordinates;
+    }
+
+    @JsonProperty("wkt")
+    public String getWkt() {
+        return wkt;
+    }
+
+    @JsonProperty("wkt")
+    public void setWkt(String wkt) {
+        this.wkt = wkt;
     }
     
 

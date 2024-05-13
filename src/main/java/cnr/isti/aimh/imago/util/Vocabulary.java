@@ -22,6 +22,8 @@ public class Vocabulary {
 	public static final String wikidata = "http://wikidata.org/entity/";
 	public static final String time = "http://www.w3.org/2006/time#";
 	public static final String imago = "https://imagoarchive.it/ontology/";
+	public static final String geosparql = "http://www.opengis.net/ont/geosparql#";
+
 
   // Resources eCRM
   public Resource e19_physical_object;
@@ -113,6 +115,9 @@ public class Vocabulary {
   public Property has_start_date;
   public Property has_end_date;
   public Property has_alias;
+
+  // Properties GeoSPAQRL
+  public Property asWKT;
 
 
   public Vocabulary(Model model){
@@ -208,6 +213,9 @@ public class Vocabulary {
     this.has_start_date = model.getProperty(Vocabulary.imago + "has_start_date");
     this.has_end_date = model.getProperty(Vocabulary.imago + "has_end_date");
     this.has_alias = model.getProperty(Vocabulary.imago + "has_alias");
+
+    // Properties GeoSPARQL
+    this.asWKT = model.getProperty(Vocabulary.geosparql + "asWKT");
 
   }
 

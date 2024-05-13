@@ -2,10 +2,10 @@
 config.properties
 
 #exclude json
-*no.json
+*.json
 
 #exclude sparql
-*.rq
+#*.rq
 
 #exclude turtle
 *.ttl
