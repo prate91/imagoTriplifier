@@ -54,6 +54,7 @@ public class ModelImago {
 		OntModelSpec s = new OntModelSpec( OntModelSpec.OWL_DL_MEM );
 		s.setDocumentManager( mgr );
 		OntModel onto = ModelFactory.createOntologyModel(s);
+		// System.out.println(url);
 		onto.read(url); // Jena function to read the remote ontology 
 		return onto;
 
@@ -260,9 +261,8 @@ public class ModelImago {
             	Resource r_place = model.createResource(place_iri);
 				Literal l_toponym;
 				String t_name;
-
+				
 				if(place.getName()!=null){
-						
 					// System.out.println(checkLatinWords(place.getName()));
 					// Replace matched characters with an empty string
 					if (checkLatinWords(place.getName())) {
@@ -307,16 +307,41 @@ public class ModelImago {
 				// if(toponym_name_eng!=null){
 				// 	Literal l_toponym_eng = model.createLiteral(toponym_name_eng, "en");
 				// 	model.add(r_toponym, vocabulary.p190_has_symbolic_content, l_toponym_eng);}
-
+				String wkt = place.getWkt();
+				Literal l_wkt = model.createTypedLiteral(wkt, "http://www.opengis.net/ont/geosparql#wktLiteral");
             	// String lat = place.getLat();
             	// String lon = place.getLon();
 				// System.out.println(place.getName());
+				
 				String coordinates = place.getCoordinates();
+				// Literal l_coordinates_2 = model.createTypedLiteral(coordinates, "http://www.opengis.net/ont/geosparql#wktLiteral");
+				// if(wkt==null || wkt.equals("")){
+				// 	System.out.print(l_toponym + "----" + coordinates);
+				// }
+
+				// if(coordinates==null || coordinates.equals("")){
+				// 	System.out.print(l_toponym + "----" + wkt);
+				// }
+
 				// WKT format POINT (30 10)
+				// WKT format POINT (30 10)
+				if(wkt!=null){
+					if(!wkt.equals("")){
+						model.add(r_place, vocabulary.asWKT, l_wkt);
+					// }else{
+					// 	if(coordinates!=null){
+					// 		System.out.println(coordinates);
+							
+					// 		model.add(r_place, vocabulary.asWKT, l_coordinates_2);
+							
+					// 	}
+
+					}
+				}
 				if(coordinates!=null){
             	Literal l_coordinates = model.createTypedLiteral(coordinates);
             	// model.add(e94_space_primitive, p190_has_symbolic_content, coordinates);
-
+				
             	model.add(r_place, vocabulary.p168_place_is_defined_by, _b_coordinates);
 				model.add(_b_coordinates, vocabulary.p190_has_symbolic_content, l_coordinates);
 				}
