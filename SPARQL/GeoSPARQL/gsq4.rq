@@ -32,7 +32,7 @@ WHERE {
       SERVICE <https://query.wikidata.org/bigdata/namespace/wdq/sparql> { 
             wd:Q48175 wdt:P625 ?coord.    
       } 
-    }
+    } LIMIT 1
   }
   FILTER(geof:sfIntersects(?wktPlace,geof:buffer(?coord,0.3, uom:degree))). 
 }  

@@ -1,8 +1,9 @@
 
+The following queries can be queried through a [SPARQL endpoint](https://imagoarchive.it/geosparql/).  The `FROM` clause specifies the graph that is queried. Several ontology prefixes are specified at the beginning of the queries to shorten the corresponding IRIs, which are used in the subsequent parts of the query. The `FROM` clause and the prefix declaration are equal for all the queries. All result tables in this document have been cleared of WKT polygons to better present the results to the reader.
 # Query 1
 
 ## The works that mention places located in France
-https://api.triplydb.com/s/6Dq-DZ_lG
+[run the query](https://api.triplydb.com/s/_F5ofY5ed)
 
 ```
 PREFIX : <https://imagoarchive.it/ontology/>
@@ -38,20 +39,15 @@ WHERE {
                     geo:hasGeometry ?geometryFrance .
             ?geometryFrance geo:asWKT ?wktFrance .     
         } 
-    }
+    } LIMIT 1
   }
   FILTER(geof:sfWithin(?wktPlace,?wktFrance)). 
 } 
-
 ```
 
-
-The query retrieves the work titles and authors along with the toponyms the works mention. The "FROM" clause specifies the graph that is queried. Several ontology prefixes are specified at the beginning of the query to shorten the corresponding IRIs, which are used in the subsequent parts of the query. The "FROM" clause and the prefix declaration is equal also for the other two queries reported in the following.
-
-
-The \textit{WHERE} clause contains the conditions that need to be satisfied for each result. It involves several semantic-triple patterns connected by the "." or ";" operators. In this clause, in addition to retrieving the work titles, authors and toponyms, the polygons of the places identified by the toponyms are defined as conditions to satisfy. A nested \textit{SELECT} statement allows retrieving the WKT geometry of France (wd:Q142) from the QLever SPARQL server of the University of Freiburg.
-Finally, the \textit{FILTER} clause selects the places that are included within the France polygon. \\
-The query produced the output reported in Table \ref{tab:Query1}. To verify the correctness of the retrieved information, we manually checked, %with the help of a MOVING expert, the VCs (among the 454) that contained information on vineyard products. Precision and Recall (0.93 and 0.90, respectively), were reasonably high, and F1 (0.91) indicated good retrieval performance. The main reason for Recall not reaching one was the presence of faults (false negatives) by the named entity extraction processes in detecting vineyard-related entities in the event texts. Precision was, instead, negatively affected by citations of vineyard-related products in VCs that did not focus on vineyard products (false positives).
+The query retrieves the work titles and authors along with the toponyms the works mention. 
+The `WHERE` clause contains the conditions that need to be satisfied for each result. It involves several semantic-triple patterns connected by the "." or ";" operators. In this clause, we retrieve the work titles, authors, toponyms, and the polygons of the places identified by the toponyms. A nested `SELECT` statement allows retrieving the WKT geometry of France (Q142) from the QLever SPARQL server of the University of Freiburg.
+Finally, the `FILTER` clause selects the places included within the France polygon. 
 
 |     | title                                                                         | authorName                   | toponymName                     |
 | --- | ----------------------------------------------------------------------------- | ---------------------------- | ------------------------------- |
@@ -77,9 +73,7 @@ The query produced the output reported in Table \ref{tab:Query1}. To verify the 
 # Query 2
 
 ## The places located within a 0.2-degree buffer around the Via Francigena
-https://api.triplydb.com/s/0LDHEc7_A
-
-We report the SPARQL query corresponding to Q2 in our GitHub repository
+[run the query](https://api.triplydb.com/s/SiM7V-nit)
 
 ```
 PREFIX : <https://imagoarchive.it/ontology/>
@@ -114,10 +108,9 @@ WHERE {
 ```
 
 
-The query retrieves the work titles and authors along with the toponyms the works mention. The "FROM" clause specifies the graph that is queried. Several ontology prefixes are specified at the beginning of the query to shorten the corresponding IRIs, which are used in the subsequent parts of the query. The prefix declaration is equal also for the other two queries reported in the following.
-The \textit{WHERE} clause, in addition to retrieving the work titles and authors and the toponyms, the polygons of the places identified by the toponyms are defined as conditions to satisfy.
-Finally, the \textit{FILTER} clause selects the places that are included within a buffer of 0.2 degrees created around the Francigena polygon. The Via Francigena is an ancient road and pilgrimage route running from Canterbury in England, through France and Switzerland, to Rome and then to Apulia, Italy, where there were ports of embarkation for the Holy Land. \\
-The query produced the output reported in Table \ref{tab:Query2}.
+The query retrieves the work titles and authors along with the toponyms the works mention.
+In the `WHERE` clause, we retrieve the work titles and authors and the toponyms as well as the polygons of the places identified by the toponyms. Furthermore, we set the value of the work literary genre equal to *itineraria*. Indeed, we think that a study on the knowledge of places located near the via Francigena is more significant if conducted on works belong to the genres of travel literature. The Via Francigena is an ancient road and pilgrimage route running from Canterbury in England, through France and Switzerland, to Rome and then to Apulia, Italy, where there were ports of embarkation for the Holy Land. *Itineraria* genre has a unique identifier (100021) that came from a literary genres thesaurus built by the IMAGO scholars based on the subject indexing tool Nuovo Soggettario.  
+Finally, the `FILTER` clause selects the places that are included within a buffer of 0.2 degrees created around the Francigena polygon, specified in the `BIND` operator.
 
 |     | title                      | authorName                  | toponymName |
 | --- | -------------------------- | --------------------------- | ----------- |
@@ -130,10 +123,10 @@ The query produced the output reported in Table \ref{tab:Query2}.
 | 7   | Descriptio orae Ligusticae | Iacobus Bracellus           | La Spezia   |
 
 # Query 3
-https://api.triplydb.com/s/H82fyJ-KI
-## The places in Italy that are mentioned in manuscripts written in the fifteenth century
 
-We report the SPARQL query corresponding to Q3 in our GitHub repository.
+## The places in Italy that are mentioned in works contained in manuscripts written in the fifteenth century
+[run the query](https://api.triplydb.com/s/RJPlgt-07)
+
 
 ```
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -193,10 +186,9 @@ SELECT DISTINCT ?authorName ?title ?toponymName ?wktPlace
 } 
 ```
 
-The query retrieves the toponyms mentioned in manuscripts of the fifteenth century.
-In the \textit{WHERE} clause, the polygons of the places identified by the toponyms are retrieved and the range of time is set using the FILTER operator. A nested \textit{SELECT} statement allows retrieving the WKT geometry of Italy (wd:38) from the QLever SPARQL server of the University of Freiburg.
-Finally, the \textit{FILTER} clause selects the places that are included within the polygon of Italy.\\
-The query produced the output reported in Table \ref{tab:Query3}.
+The query retrieves the toponyms and the corresponding works and authors in which these places are mentioned.
+In the `WHERE` clause, the polygons of the places identified by the toponyms are retrieved. Simultaneously, information regarding manuscripts is gathered, including the production date of each. Subsequently, the time range is established using the `FILTER` operator. A nested `SELECT` statement allows retrieving the WKT geometry of Italy (Q38) from the QLever SPARQL server of the University of Freiburg.
+Finally, another `FILTER` clause selects the places included within Italy's polygon.
 
 |     | authorName                         | title                                                                              | toponymName                          |
 | --- | ---------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------ |
@@ -263,10 +255,7 @@ The query produced the output reported in Table \ref{tab:Query3}.
 # Query 4
 
 ## The authors who have visited the Holy Land
-https://api.triplydb.com/s/DuYhoQLT-
-
-We report the SPARQL query corresponding to Q4 in our GitHub repository\footnote{\url{LINK}}.
-
+[run the query](https://api.triplydb.com/s/7ocmYYTQ1)
 
 ```
 PREFIX : <https://imagoarchive.it/ontology/>
@@ -303,17 +292,17 @@ WHERE {
       SERVICE <https://query.wikidata.org/bigdata/namespace/wdq/sparql> { 
             wd:Q48175 wdt:P625 ?coord.    
       } 
-    }
+    } LIMIT 1
   }
   FILTER(geof:sfIntersects(?wktPlace,geof:buffer(?coord,0.3, uom:degree))). 
+}  
 }  
 ```
 
 The query retrieves the authors who wrote works in which they tell their journeys in the Holy Land.
-The \textit{WHERE} clause contains the conditions that need to be satisfied for each result. In this clause, the polygons of the places identified by the toponyms are retrieved only for the work belonging to two literary genres, i.e., personal travel diaries and \emph{itineraria}. These two genres have to unique identifies (100026 for travel diaries and 100021 for \emph{itineraria}) that came from a literary genres thesaurus built by the IMAGO scholars on the basis of the subject indexing tool Nuovo Soggettario \cite{cheti2023functionality}. 
-A nested \textit{SELECT} statement allows retrieving the coordinates (longitude and latitude) of the Holy Land (wd:Q142) from the Wikidata SPARQL server.
-Finally, the \textit{FILTER} clause selects the places that are included within a buffer of 0.3 degrees created around the Holy Land coordinates.\\
-The query produced the output reported in Table \ref{tab:Query4}.
+In the `WHERE` clause the polygons of the places identified by the toponyms are retrieved only for the work belonging to the literary genre "personal travel diaries". As the Q2, this genre has a unique identifier (100026) that came from a literary genres thesaurus built by the IMAGO scholars. 
+A nested `SELECT` statement allows retrieving the coordinates (longitude and latitude) of the Holy Land (Q142) from the Wikidata SPARQL server.
+Finally, the `FILTER` clause selects the places that are included within a buffer of 0.3 degrees created around the Holy Land coordinates.
 
 |     | authorName                    | title                                                                          |
 | --- | ----------------------------- | ------------------------------------------------------------------------------ |
