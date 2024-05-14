@@ -9,7 +9,7 @@ PREFIX osm: <https://www.openstreetmap.org/>
 PREFIX osm2rdfkey: <https://osm2rdf.cs.uni-freiburg.de/rdf/key#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/> 
 PREFIX wd: <http://www.wikidata.org/entity/>
-SELECT DISTINCT ?authorName ?title ?toponymName ?wktPlace (group_concat(distinct ?manuscriptString;separator="; ") as ?manList)
+SELECT DISTINCT ?authorName ?title ?toponymName ?wktPlace 
 	FROM <https://geosparql.isti.cnr.it/fuseki/imago/archive>
 		WHERE {
     ?exp_cre a ilrm:F28_Expression_Creation ;
@@ -53,4 +53,4 @@ SELECT DISTINCT ?authorName ?title ?toponymName ?wktPlace (group_concat(distinct
   }
   FILTER(geof:sfWithin(?wktPlace,?wktItaly)). 
     
-} GROUP BY ?authorName ?title ?toponymName ?wktPlace
+} 
