@@ -4,7 +4,7 @@ The following queries can be queried through a [SPARQL endpoint](https://imagoar
 # The works that mention places located in France (Q1)
 [run the query](https://api.triplydb.com/s/_F5ofY5ed)
 
-```
+```SPARQL
 PREFIX : <https://imagoarchive.it/ontology/>
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
@@ -72,7 +72,7 @@ Finally, the `FILTER` clause selects the places included within the France polyg
 # The places located within a 0.2-degree buffer around the Via Francigena (Q2)
 [run the query](https://api.triplydb.com/s/SiM7V-nit)
 
-```
+```SPARQL
 PREFIX : <https://imagoarchive.it/ontology/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX ecrm: <http://erlangen-crm.org/200717/>
@@ -123,7 +123,7 @@ Finally, the `FILTER` clause selects the places that are included within a buffe
 [run the query](https://api.triplydb.com/s/RJPlgt-07)
 
 
-```
+```SPARQL
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -250,7 +250,7 @@ Finally, another `FILTER` clause selects the places included within Italy's poly
 # The authors who have visited the Holy Land (Q4)
 [run the query](https://api.triplydb.com/s/7ocmYYTQ1)
 
-```
+```SPARQL
 PREFIX : <https://imagoarchive.it/ontology/>
 PREFIX igen: <https://imagoarchive.it/thes/tid/>
 PREFIX ecrm: <http://erlangen-crm.org/200717/>
