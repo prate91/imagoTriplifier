@@ -31,7 +31,7 @@ WHERE {
                     geo:hasGeometry ?geometryFrance .
             ?geometryFrance geo:asWKT ?wktFrance .     
         } 
-    }
+    } LIMIT 1
   }
   FILTER(geof:sfWithin(?wktPlace,?wktFrance)). 
 } 
