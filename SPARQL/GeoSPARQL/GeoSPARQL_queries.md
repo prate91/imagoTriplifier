@@ -1,8 +1,7 @@
 
 The following queries can be queried through a [SPARQL endpoint](https://imagoarchive.it/geosparql/).  The `FROM` clause specifies the graph that is queried. Several ontology prefixes are specified at the beginning of the queries to shorten the corresponding IRIs, which are used in the subsequent parts of the query. The `FROM` clause and the prefix declaration are equal for all the queries. All result tables in this document have been cleared of WKT polygons to better present the results to the reader.
-# Query 1
 
-## The works that mention places located in France
+# The works that mention places located in France (Q1)
 [run the query](https://api.triplydb.com/s/_F5ofY5ed)
 
 ```
@@ -70,9 +69,7 @@ Finally, the `FILTER` clause selects the places included within the France polyg
 | 17  | Itinerarium                                                                   | Virgilius Bornadus de Brixia | Paris                           |
 | 18  | Historia dedicationis ecclesiae sancti Remigii apud Remos                     | Anselmus Remensis            | Reims                           |
 
-# Query 2
-
-## The places located within a 0.2-degree buffer around the Via Francigena
+# The places located within a 0.2-degree buffer around the Via Francigena (Q2)
 [run the query](https://api.triplydb.com/s/SiM7V-nit)
 
 ```
@@ -122,9 +119,7 @@ Finally, the `FILTER` clause selects the places that are included within a buffe
 | 6   | Descriptio orae Ligusticae | Iacobus Bracellus           | Sarzana     |
 | 7   | Descriptio orae Ligusticae | Iacobus Bracellus           | La Spezia   |
 
-# Query 3
-
-## The places in Italy that are mentioned in works contained in manuscripts written in the fifteenth century
+# The places in Italy that are mentioned in works contained in manuscripts written in the fifteenth century (Q3)
 [run the query](https://api.triplydb.com/s/RJPlgt-07)
 
 
@@ -252,9 +247,7 @@ Finally, another `FILTER` clause selects the places included within Italy's poly
 | 58  | Blondus Flavius                    | Roma instaurata                                                                    | Roma                                 |
 | 59  | Burchardus de Monte Sion           | Descriptio Terrae Sanctae                                                          | Sicilia                              |
 
-# Query 4
-
-## The authors who have visited the Holy Land
+# The authors who have visited the Holy Land (Q4)
 [run the query](https://api.triplydb.com/s/7ocmYYTQ1)
 
 ```
