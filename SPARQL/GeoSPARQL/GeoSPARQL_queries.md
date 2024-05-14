@@ -182,7 +182,7 @@ SELECT DISTINCT ?authorName ?title ?toponymName ?wktPlace
 ```
 
 The query retrieves the toponyms and the corresponding works and authors in which these places are mentioned.
-In the `WHERE` clause, the polygons of the places identified by the toponyms are retrieved. Simultaneously, information regarding manuscripts is gathered, including the production date of each. Subsequently, the time range is established using the `FILTER` operator. A nested `SELECT` statement allows retrieving the WKT geometry of Italy (Q38) from the QLever SPARQL server of the University of Freiburg.
+In the `WHERE` clause, the polygons of the places identified by the toponyms are retrieved. Simultaneously, information regarding manuscripts is retrieved, including the production dates. Subsequently, the time range is established using the `FILTER` operator. A nested `SELECT` statement allows retrieving the WKT geometry of Italy (Q38) from the QLever SPARQL server of the University of Freiburg.
 Finally, another `FILTER` clause selects the places included within Italy's polygon.
 
 |     | authorName                         | title                                                                              | toponymName                          |
