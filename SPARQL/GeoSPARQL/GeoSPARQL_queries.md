@@ -1,5 +1,5 @@
 
-The following queries can be queried through a [SPARQL endpoint](https://imagoarchive.it/geosparql/).  The `FROM` clause specifies the graph that is queried. Several ontology prefixes are specified at the beginning of the queries to shorten the corresponding IRIs, which are used in the subsequent parts of the query. The `FROM` clause and the prefix declaration are equal for all the queries. All result tables in this document have been cleared of WKT polygons to better present the results to the reader.
+The queries below can be executed through the specified [SPARQL endpoint](https://imagoarchive.it/geosparql/).  The `FROM` clause specifies the graph that is queried. Several ontology prefixes are specified at the beginning of the queries to shorten the corresponding IRIs, which are used in the subsequent parts of the query. The `FROM` clause and the prefix declaration are equal for all the queries. All result tables have been cleared of WKT polygons to better present the results to the reader.
 
 # The works that mention places located in France (Q1)
 [run the query](https://api.triplydb.com/s/_F5ofY5ed)
