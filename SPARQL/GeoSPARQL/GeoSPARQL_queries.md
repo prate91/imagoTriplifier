@@ -294,7 +294,7 @@ WHERE {
 
 The query retrieves the authors who wrote works in which they tell their journeys in the Holy Land.
 In the `WHERE` clause the polygons of the places identified by the toponyms are retrieved only for the work belonging to the literary genre "personal travel diaries". As the Q2, this genre has a unique identifier (100026) that came from a literary genres thesaurus built by the IMAGO scholars. 
-A nested `SELECT` statement allows retrieving the coordinates (longitude and latitude) of the Holy Land (Q142) from the Wikidata SPARQL server.
+A nested `SELECT` statement allows retrieving the coordinates (longitude and latitude) of the Holy Land (Q48175) from the Wikidata SPARQL server.
 Finally, the `FILTER` clause selects the places that are included within a buffer of 0.3 degrees created around the Holy Land coordinates.
 
 |     | authorName                    | title                                                                          |
